@@ -8,7 +8,7 @@
 
 import UIKit
 
-class misCategoriasViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, protocoloAgregarCategoria {
+class misCategoriasViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, protocoloAgregarCategoria, protocoloEliminarCategoria {
     
     var categorias = [Categoria]()
     @IBOutlet weak var tableView: UITableView!
@@ -56,6 +56,12 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
         if(segue.identifier == "agregarCategoria"){
             let viewAgregar = segue.destination as! agregarCategoriaViewController
             viewAgregar.delegado = self
+        }
+        if(segue.identifier == "contactosCategoria"){
+            let viewCategoria = segue.destination as! CategoriaViewController
+            viewCategoria.delegado = self
+            let indice = tableView.indexPathForSelectedRow!
+            viewCategoria.nombreCat = categorias[indice.row].nombre
         }
         //else{
             //let viewAgregar = segue.destination as! menuViewController

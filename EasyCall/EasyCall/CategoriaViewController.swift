@@ -8,13 +8,33 @@
 
 import UIKit
 
+protocol protocoloEliminarCategoria {
+    func eliminarCategoria(cat : Categoria) -> Void
+}
+
 class CategoriaViewController: UIViewController {
+    
+    var delegado : protocoloEliminarCategoria!
+    
+    var nombreCat : String!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = nombreCat
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func eliminarCategoria(_ sender: UIButton) {
+        let cat = Categoria(nombre: nombreCat, icon: "icon1")
+        
+        delegado.eliminarCategoria(cat: cat)
+        navigationController?.popViewController(animated: true)
+            
+    }
+    
     
 
     /*

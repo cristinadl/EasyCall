@@ -14,7 +14,7 @@ protocol protocoloAgregarCategoria {
 
 class agregarCategoriaViewController: UIViewController,UIPopoverPresentationControllerDelegate {
         
-        var categorias = [Categoria]()
+//        var categorias = [Categoria]()
         
         @IBOutlet weak var nombreTextField: UITextField!
         @IBOutlet weak var iconTextField: UITextField!
