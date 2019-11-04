@@ -68,8 +68,24 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
         categorias.append(cat)
         guardarCategoria()
         tableView.reloadData()
-        
     }
+    
+    func eliminarCategoria(cat: Categoria) {
+        var rem = -1
+        var i = 0
+        for categoria in categorias {
+            if(categoria.nombre == cat.nombre){
+                rem = i
+            }
+            i += 1
+        }
+        if(rem >= 0){
+            categorias.remove(at: rem)
+            guardarCategoria()
+            tableView.reloadData()
+        }
+    }
+    
     
     @IBAction func guardarCategoria() {
         
