@@ -19,6 +19,7 @@ class agregarCategoriaViewController: UIViewController,UIPopoverPresentationCont
         @IBOutlet weak var nombreTextField: UITextField!
         @IBOutlet weak var iconTextField: UITextField!
    
+    @IBOutlet weak var imagesView: UIView!
     var imagen: UIImage!
     @IBOutlet weak var iconImageView: UIImageView!
     
@@ -41,14 +42,22 @@ class agregarCategoriaViewController: UIViewController,UIPopoverPresentationCont
                 navigationController?.popViewController(animated: true)
             }
         }
+    
+    @IBAction func selectedIcon(_ sender: Any) {
+        imagesView.isHidden = false
+    }
+    @IBAction func selectIcon(_ sender: UIButton) {
+        imagesView.isHidden = true
+        actualizarDato(img: (sender.imageView?.image)!)
+    }
         
         func adaptivePresentationStyle (for controller:
         UIPresentationController) -> UIModalPresentationStyle {
         return .none
         }
     
-    func actualizarDato(){
-        iconImageView.image=imagen
+    func actualizarDato(img: UIImage){
+        iconImageView.image = img
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

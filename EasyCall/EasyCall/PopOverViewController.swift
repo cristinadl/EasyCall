@@ -20,47 +20,47 @@ class PopOverViewController: UIViewController {
     @IBOutlet weak var btTrabajo: UIButton!
     
     
-    @IBAction func actionAmigos(_ sender: UIButton) {
-        let vista1 = presentingViewController as! agregarCategoriaViewController
-        vista1.imagen = btAmigos.imageView?.image
-        vista1.actualizarDato()
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func actionHospital(_ sender: UIButton) {
-        let vista1 = presentingViewController as! agregarCategoriaViewController
-        vista1.imagen = btHospital.imageView?.image
-        vista1.actualizarDato()
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func actionEmergencia(_ sender: UIButton) {
-        let vista1 = presentingViewController as! agregarCategoriaViewController
-        vista1.imagen = btEmergencia.imageView?.image
-        vista1.actualizarDato()
-        dismiss(animated: true, completion: nil)
-    }
-
-    @IBAction func actionCafe(_ sender: UIButton) {
-        let vista1 = presentingViewController as! agregarCategoriaViewController
-        vista1.imagen = btCafe.imageView?.image
-        vista1.actualizarDato()
-        dismiss(animated: true, completion: nil)
-    }
-
-    @IBAction func actionServicios(_ sender: UIButton) {
-        let vista1 = presentingViewController as! agregarCategoriaViewController
-        vista1.imagen = btServicios.imageView?.image
-        vista1.actualizarDato()
-        dismiss(animated: true, completion: nil)
-    }
-
-    @IBAction func actionTrabajo(_ sender: UIButton) {
-        let vista1 = presentingViewController as! agregarCategoriaViewController
-        vista1.imagen = btTrabajo.imageView?.image
-        vista1.actualizarDato()
-        dismiss(animated: true, completion: nil)
-    }
+//    @IBAction func actionAmigos(_ sender: UIButton) {
+//        let vista1 = presentingViewController as! agregarCategoriaViewController
+//        vista1.imagen = btAmigos.imageView?.image
+//        vista1.actualizarDato()
+//        dismiss(animated: true, completion: nil)
+//    }
+//    
+//    @IBAction func actionHospital(_ sender: UIButton) {
+//        let vista1 = presentingViewController as! agregarCategoriaViewController
+//        vista1.imagen = btHospital.imageView?.image
+//        vista1.actualizarDato()
+//        dismiss(animated: true, completion: nil)
+//    }
+//    
+//    @IBAction func actionEmergencia(_ sender: UIButton) {
+//        let vista1 = presentingViewController as! agregarCategoriaViewController
+//        vista1.imagen = btEmergencia.imageView?.image
+//        vista1.actualizarDato()
+//        dismiss(animated: true, completion: nil)
+//    }
+//
+//    @IBAction func actionCafe(_ sender: UIButton) {
+//        let vista1 = presentingViewController as! agregarCategoriaViewController
+//        vista1.imagen = btCafe.imageView?.image
+//        vista1.actualizarDato()
+//        dismiss(animated: true, completion: nil)
+//    }
+//
+//    @IBAction func actionServicios(_ sender: UIButton) {
+//        let vista1 = presentingViewController as! agregarCategoriaViewController
+//        vista1.imagen = btServicios.imageView?.image
+//        vista1.actualizarDato()
+//        dismiss(animated: true, completion: nil)
+//    }
+//
+//    @IBAction func actionTrabajo(_ sender: UIButton) {
+//        let vista1 = presentingViewController as! agregarCategoriaViewController
+//        vista1.imagen = btTrabajo.imageView?.image
+//        vista1.actualizarDato()
+//        dismiss(animated: true, completion: nil)
+//    }
     
     
         override func viewDidLoad() {
