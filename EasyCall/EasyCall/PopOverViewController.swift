@@ -69,6 +69,8 @@ class PopOverViewController: UIViewController {
      preferredContentSize = CGSize(width: 250, height: 250)
     }
     
+    
+    
 /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        let vista1 = presentingViewController as! agregarCategoriaViewController
