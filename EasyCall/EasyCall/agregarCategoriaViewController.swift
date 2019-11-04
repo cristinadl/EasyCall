@@ -18,8 +18,8 @@ class agregarCategoriaViewController: UIViewController,UIPopoverPresentationCont
         
         @IBOutlet weak var nombreTextField: UITextField!
         @IBOutlet weak var iconTextField: UITextField!
-        
-        var delegado : protocoloAgregarCategoria!
+    @IBOutlet weak var iconImageView: UIImageView!
+    var delegado : protocoloAgregarCategoria!
         
         override func viewDidLoad() {
             super.viewDidLoad()

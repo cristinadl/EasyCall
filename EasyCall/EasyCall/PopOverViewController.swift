@@ -10,7 +10,18 @@ import UIKit
 
 class PopOverViewController: UIViewController {
 
-    override func viewDidLoad() {
+    var imagen: UIImageView!
+    
+    @IBAction func btListo(_ sender: UIButton) {
+        let vista1 = presentingViewController as! agregarCategoriaViewController
+//        vista1.dato = tfMensaje.text!
+//               vista1.actualizarDato()
+//               dismiss(animated: true, completion: nil)
+        
+        
+    }
+    
+        override func viewDidLoad() {
         super.viewDidLoad()
 
      preferredContentSize = CGSize(width: 250, height: 250)
