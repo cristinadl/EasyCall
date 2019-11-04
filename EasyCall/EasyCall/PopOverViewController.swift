@@ -10,16 +10,58 @@ import UIKit
 
 class PopOverViewController: UIViewController {
 
-    var imagen: UIImageView!
+    var imagen: UIImage!
     
-    @IBAction func btListo(_ sender: UIButton) {
+    @IBOutlet weak var btAmigos: UIButton!
+    @IBOutlet weak var btHospital: UIButton!
+    @IBOutlet weak var btEmergencia: UIButton!
+    @IBOutlet weak var btCafe: UIButton!
+    @IBOutlet weak var btServicios: UIButton!
+    @IBOutlet weak var btTrabajo: UIButton!
+    
+    
+    @IBAction func actionAmigos(_ sender: UIButton) {
         let vista1 = presentingViewController as! agregarCategoriaViewController
-//        vista1.dato = tfMensaje.text!
-//               vista1.actualizarDato()
-//               dismiss(animated: true, completion: nil)
-        
-        
+        vista1.imagen = btAmigos.imageView?.image
+        vista1.actualizarDato()
+        dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func actionHospital(_ sender: UIButton) {
+        let vista1 = presentingViewController as! agregarCategoriaViewController
+        vista1.imagen = btHospital.imageView?.image
+        vista1.actualizarDato()
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func actionEmergencia(_ sender: UIButton) {
+        let vista1 = presentingViewController as! agregarCategoriaViewController
+        vista1.imagen = btEmergencia.imageView?.image
+        vista1.actualizarDato()
+        dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction func actionCafe(_ sender: UIButton) {
+        let vista1 = presentingViewController as! agregarCategoriaViewController
+        vista1.imagen = btCafe.imageView?.image
+        vista1.actualizarDato()
+        dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction func actionServicios(_ sender: UIButton) {
+        let vista1 = presentingViewController as! agregarCategoriaViewController
+        vista1.imagen = btServicios.imageView?.image
+        vista1.actualizarDato()
+        dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction func actionTrabajo(_ sender: UIButton) {
+        let vista1 = presentingViewController as! agregarCategoriaViewController
+        vista1.imagen = btTrabajo.imageView?.image
+        vista1.actualizarDato()
+        dismiss(animated: true, completion: nil)
+    }
+    
     
         override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +69,13 @@ class PopOverViewController: UIViewController {
      preferredContentSize = CGSize(width: 250, height: 250)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+/*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+       let vista1 = presentingViewController as! agregarCategoriaViewController
+        vista1.imagen = btAmigos.imageView?.image
+        vista1.actualizarDato()
+        dismiss(animated: true, completion: nil)
     }
-    */
+ */
 
 }

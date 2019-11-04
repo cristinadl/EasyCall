@@ -18,14 +18,17 @@ class agregarCategoriaViewController: UIViewController,UIPopoverPresentationCont
         
         @IBOutlet weak var nombreTextField: UITextField!
         @IBOutlet weak var iconTextField: UITextField!
+   
+    var imagen: UIImage!
     @IBOutlet weak var iconImageView: UIImageView!
+    
     var delegado : protocoloAgregarCategoria!
         
         override func viewDidLoad() {
             super.viewDidLoad()
             
             title = "Agregar Categoria"
-            
+           
         }
         
         @IBAction func guardarCategoria(_ sender: UIButton) {
@@ -43,10 +46,15 @@ class agregarCategoriaViewController: UIViewController,UIPopoverPresentationCont
         UIPresentationController) -> UIModalPresentationStyle {
         return .none
         }
+    
+    func actualizarDato(){
+        iconImageView.image=imagen
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                let vistaPopOver = segue.destination as! PopOverViewController
            vistaPopOver.popoverPresentationController!.delegate = self
-          // vistaPopOver.dato = lbMensaje.text
+        vistaPopOver.imagen = iconImageView.image
            
        }
 }
