@@ -12,7 +12,7 @@ protocol protocoloAgregarCategoria {
     func agregaCategoria(cat : Categoria) -> Void
 }
 
-class agregarCategoriaViewController: UIViewController {
+class agregarCategoriaViewController: UIViewController,UIPopoverPresentationControllerDelegate {
         
         var categorias = [Categoria]()
         
@@ -39,7 +39,15 @@ class agregarCategoriaViewController: UIViewController {
             }
         }
         
-        
-        
+        func adaptivePresentationStyle (for controller:
+        UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+        }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+               let vistaPopOver = segue.destination as! PopOverViewController
+           vistaPopOver.popoverPresentationController!.delegate = self
+          // vistaPopOver.dato = lbMensaje.text
+           
+       }
 }
 
