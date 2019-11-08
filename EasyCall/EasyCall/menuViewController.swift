@@ -15,15 +15,16 @@ class menuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         
         title = "Menú"
-        // titi estuvo aquí
         // Do any additional setup after loading the view.
     }
+    
+    var segueToGo: String = ""
     
     var menuItems: [menuItem] = [
         menuItem(nombre: "Agregar Contacto", icon: "agregarContacto"),
         menuItem(nombre: "Buscar Contacto", icon: "buscarContacto"),
         menuItem(nombre: "Meter un Contacto en una Categoria", icon: "meterContactoEnCategoria"),
-        menuItem(nombre: "Agregar mi lista de Contactos", icon: "agregarMiLista")
+//        menuItem(nombre: "Agregar mi lista de Contactos", icon: "agregarMiLista")
     ]
     @IBOutlet weak var tableView: UITableView!
     
@@ -54,6 +55,31 @@ class menuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 151
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(menuItems[indexPath.row].nombre == "Agregar Contacto"){
+            segueToGo = "agregarSegue"
+        }
+        
+        if(menuItems[indexPath.row].nombre == "Buscar Contacto"){
+            segueToGo = "buscarSegue"
+        }
+        if(menuItems[indexPath.row].nombre == "Meter un Contacto en una Categoria"){
+            segueToGo = "meterContactoACatSegue"
+        }
+        
+//        if(menuItems[indexPath.row].nombre == "Agregar mi lista de Contactos"){
+//            segueToGo = ""
+//        }
+        
+        
+         performSegue(withIdentifier: segueToGo, sender: nil)
+    }
+    
+    // meterContactoACatSegue
+    // buscarSegue
+    // agregarSegue
+    
     
     
     

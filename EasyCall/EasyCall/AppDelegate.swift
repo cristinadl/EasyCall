@@ -8,14 +8,23 @@
 
 import UIKit
 import CoreData
+import Contacts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var contactStore = CNContactStore()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        contactStore.requestAccess(for: .contacts, completionHandler: { (success,error) in
+            if success {
+                print("Contact Authorization Succesfully")
+            }
+            
+        })
+        
         // Override point for customization after application launch.
         return true
     }

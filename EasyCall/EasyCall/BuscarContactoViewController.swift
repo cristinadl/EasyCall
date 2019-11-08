@@ -1,8 +1,8 @@
 //
-//  ContactoEmergenciaViewController.swift
+//  BuscarContactoViewController.swift
 //  EasyCall
 //
-//  Created by Martha Arnaud on 10/13/19.
+//  Created by Mm on 11/8/19.
 //  Copyright © 2019 Mm. All rights reserved.
 //
 
@@ -10,12 +10,8 @@ import UIKit
 import CoreData
 import Contacts
 
-protocol protocoloContactoEmergencia {
-    func contactoEmergencia(cat : Categoria) -> Void
-}
+class BuscarContactoViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate  {
 
-class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
-    
     var contacts = [Contacto]()
     var filteredData = [Contacto]()
     var isSearching = false
@@ -25,16 +21,16 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func btLlamar(_ sender: UIButton) {
-       
+        
         
         
         
     }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.hideKeyboard()
         
         contactStore.requestAccess(for: .contacts, completionHandler: { (success,error) in
@@ -45,7 +41,7 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
         })
         
         fetchContacts()
-        searchBar.delegate = self
+        searchBar.delegate = self 
         searchBar.returnKeyType = UIReturnKeyType.done
     }
     
@@ -84,7 +80,7 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
             return filteredData.count
         }
         
-//        print("number of sections \(contacts.count)")
+        //        print("number of sections \(contacts.count)")
         return contacts.count
     }
     
