@@ -23,6 +23,7 @@ class CategoriaViewController: UIViewController {
         super.viewDidLoad()
         
         title = nombreCat
+        // ola k ase
 
         // Do any additional setup after loading the view.
     }
