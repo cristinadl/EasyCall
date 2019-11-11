@@ -28,10 +28,15 @@ class agregarCategoriaViewController: UIViewController, UIPopoverPresentationCon
         override func viewDidLoad() {
             super.viewDidLoad()
             imagesView.isHidden = true
-            
+            let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+            view.addGestureRecognizer(tap)
             title = "Agregar Categoria"
            
         }
+    
+    override func dismissKeyboard() {
+        view.endEditing(true)
+    }
         
         @IBAction func guardarCategoria(_ sender: UIButton) {
             if  let nom = nombreTextField.text,
@@ -107,4 +112,5 @@ class agregarCategoriaViewController: UIViewController, UIPopoverPresentationCon
            
        }
 }
+
 

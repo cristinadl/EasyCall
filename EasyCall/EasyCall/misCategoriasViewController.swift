@@ -7,15 +7,24 @@
 //
 
 import UIKit
+import CoreData
+import Contacts
 
 class misCategoriasViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, protocoloAgregarCategoria, protocoloEliminarCategoria {
+    var contacts = [Contacto]()
+    var filteredData = [Contacto]()
+    var isSearching = false
+    var contactStore = CNContactStore()
+    
+    var usuarioNuevo = true
+    
     
     var categorias = [Categoria]()
     @IBOutlet weak var tableView: UITableView!
     
-    func dataFileUrl() -> URL {
+    func dataFileUrl(namePlist: String) -> URL {
         let url = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-        let pathArchivo = url.appendingPathComponent("Categoria.plist")
+        let pathArchivo = url.appendingPathComponent(namePlist + ".plist")
         return pathArchivo
     }
     
@@ -30,10 +39,26 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let defaults = UserDefaults.standard
+        if let new = defaults.value(forKey: "nuevo") as? Bool {
+            usuarioNuevo = new
+        }
+        print(usuarioNuevo)
+        if(usuarioNuevo){
+            contactStore.requestAccess(for: .contacts, completionHandler: { (success,error) in
+                if success {
+                    print("Contact Authorization Succesfully")
+                }
+                
+            })
+            
+            fetchContacts()
+        }
+        obtenerContactos()
         obtenerCategorias()
         
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! categoriaCellTableViewCell
@@ -98,7 +123,19 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
         print(categorias.count)
         do {
             let data = try PropertyListEncoder().encode(categorias)
-            try data.write(to: dataFileUrl())
+            try data.write(to: dataFileUrl(namePlist: "Categoria"))
+        }
+        catch {
+            print("Save Failed")
+        }
+    }
+    
+    @IBAction func guardarContactos() {
+        
+        print(contacts.count)
+        do {
+            let data = try PropertyListEncoder().encode(contacts)
+            try data.write(to: dataFileUrl(namePlist: "Contactos"))
         }
         catch {
             print("Save Failed")
@@ -110,7 +147,7 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
         categorias.removeAll()
         
         do {
-            let data = try Data.init(contentsOf: dataFileUrl())
+            let data = try Data.init(contentsOf: dataFileUrl(namePlist: "Categoria"))
             categorias = try PropertyListDecoder().decode([Categoria].self, from: data)
         }
         catch {
@@ -121,6 +158,45 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
             print (cat.nombre, cat.icon)
         }
     }
+    
+    @IBAction func obtenerContactos() {
+        // borro la lista para verificar que sí se obtengan
+        contacts.removeAll()
+        
+        do {
+            let data = try Data.init(contentsOf: dataFileUrl(namePlist: "Contactos"))
+            contacts = try PropertyListDecoder().decode([Contacto].self, from: data)
+        }
+        catch {
+            print("Error reading or decoding file")
+        }
+        
+        print(self.contacts[0].nombre + " " + self.contacts[0].categoria + " " + self.contacts[0].number)
+        
+    }
+    
+    func fetchContacts(){
+        let key = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey] as [CNKeyDescriptor]
+        let request = CNContactFetchRequest(keysToFetch: key)
+        try! contactStore.enumerateContacts(with: request) {(contact, stoppingPointer) in
+            
+            let name = contact.givenName
+            let familyName = contact.familyName
+            var number = ""
+            if(contact.phoneNumbers != []){
+                number = (contact.phoneNumbers.first?.value.stringValue)!
+            }
+            
+            let contactToAppend = Contacto(nombre: name + " " + familyName, number: number, icon: "", emergencia: false, categoria: "")
+            self.contacts.append(contactToAppend)
+            let defaults = UserDefaults.standard
+            
+            defaults.set(false, forKey: "nuevo")
+            self.guardarContactos()
+            
+        }
+    }
+    
 
 
 }

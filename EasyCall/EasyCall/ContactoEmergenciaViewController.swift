@@ -31,40 +31,49 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
         
     }
     
+    func dataFileUrl(namePlist: String) -> URL {
+        let url = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+        let pathArchivo = url.appendingPathComponent(namePlist + ".plist")
+        return pathArchivo
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.hideKeyboard()
+        obtenerContactos()
         
-        contactStore.requestAccess(for: .contacts, completionHandler: { (success,error) in
-            if success {
-                print("Contact Authorization Succesfully")
-            }
-            
-        })
-        
-        fetchContacts()
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
     }
     
-    func fetchContacts(){
-        let key = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey] as [CNKeyDescriptor]
-        let request = CNContactFetchRequest(keysToFetch: key)
-        try! contactStore.enumerateContacts(with: request) {(contact, stoppingPointer) in
-            
-            let name = contact.givenName
-            let familyName = contact.familyName
-            var number = ""
-            if(contact.phoneNumbers != []){
-                number = (contact.phoneNumbers.first?.value.stringValue)!
-            }
-            
-            let contactToAppend = Contacto(nombre: name + " " + familyName, number: number, icon: "", emergencia: false, categoria: "")
-            self.contacts.append(contactToAppend)
-            
+    @IBAction func guardarContactos() {
+        
+        print(contacts.count)
+        do {
+            let data = try PropertyListEncoder().encode(contacts)
+            try data.write(to: dataFileUrl(namePlist: "Contactos"))
         }
+        catch {
+            print("Save Failed")
+        }
+    }
+    
+    @IBAction func obtenerContactos() {
+        // borro la lista para verificar que sí se obtengan
+        contacts.removeAll()
+        
+        do {
+            let data = try Data.init(contentsOf: dataFileUrl(namePlist: "Contactos"))
+            contacts = try PropertyListDecoder().decode([Contacto].self, from: data)
+        }
+        catch {
+            print("Error reading or decoding file")
+        }
+        
+        print(self.contacts[0].nombre + " " + self.contacts[0].categoria + " " + self.contacts[0].number)
+        
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

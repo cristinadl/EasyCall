@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Contacto: NSObject, NSCoding {
+class Contacto: NSObject, Codable, NSCoding {
 
     var icon: String
     var nombre: String
