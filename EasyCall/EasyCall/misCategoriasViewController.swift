@@ -39,6 +39,13 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        obtenerContactos()
+        obtenerCategorias()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
         if let new = defaults.value(forKey: "nuevo") as? Bool {
             usuarioNuevo = new
@@ -54,9 +61,6 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
             
             fetchContacts()
         }
-        obtenerContactos()
-        obtenerCategorias()
-        
     }
     
     
@@ -171,7 +175,7 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
             print("Error reading or decoding file")
         }
         
-        print(self.contacts[0].nombre + " " + self.contacts[0].categoria + " " + self.contacts[0].number)
+        //print(self.contacts[0].nombre + " " + self.contacts[0].categoria + " " + self.contacts[0].number)
         
     }
     

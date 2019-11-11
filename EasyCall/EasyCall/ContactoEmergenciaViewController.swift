@@ -72,7 +72,7 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
             print("Error reading or decoding file")
         }
         
-        print(self.contacts[0].nombre + " " + self.contacts[0].categoria + " " + self.contacts[0].number)
+        //print(self.contacts[0].nombre + " " + self.contacts[0].categoria + " " + self.contacts[0].number)
         
     }
     
