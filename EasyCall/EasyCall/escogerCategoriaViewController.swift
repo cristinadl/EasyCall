@@ -8,11 +8,15 @@
 
 import UIKit
 
+protocol protocoloCambiar {
+    func cambiarCategoria(cont : Contacto) -> Void
+}
 class escogerCategoriaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //    var contacts = [Contacto]()
 //    var filteredData = [Contacto]()
 //    var isSearching = false
     
+    var delegado : protocoloCambiar!
     
     @IBOutlet weak var tableView: UITableView!
     

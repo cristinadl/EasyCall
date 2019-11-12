@@ -136,6 +136,16 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
         return 110
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "agregarCategoria"){
+            let viewAgregar = segue.destination as! agregarCategoriaViewController
+//            viewAgregar.delegado = self
+        }
+        //else{
+            //let viewAgregar = segue.destination as! menuViewController
+        //}
+    }
+    
     
 
 }
