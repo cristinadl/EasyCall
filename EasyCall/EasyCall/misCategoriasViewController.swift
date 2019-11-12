@@ -116,12 +116,21 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
     func eliminarCategoria(cat: Categoria) {
         var rem = -1
         var i = 0
+        
+//        for cont in contacts{
+//            if(cont.categoria == cat.nombre){
+//                cont.categoria = ""
+//            }
+//        }
         for categoria in categorias {
             if(categoria.nombre == cat.nombre){
                 rem = i
             }
             i += 1
         }
+        
+        
+        guardarContactos()
         if(rem >= 0){
             categorias.remove(at: rem)
             guardarCategoria()

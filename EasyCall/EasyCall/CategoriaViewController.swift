@@ -47,21 +47,16 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
     }
     
     @IBAction func obtenerContactos() {
-           // borro la lista para verificar que sí se obtengan
-//           contacts.removeAll()
-//
-//           do {
-//               let data = try Data.init(contentsOf: dataFileUrl(namePlist: "Contactos"))
-//               contacts = try PropertyListDecoder().decode([Contacto].self, from: data)
-//           }
-//           catch {
-//               print("Error reading or decoding file")
-//           }
-//
-        
-        contacts = [Contacto(nombre: "marian", number: "32122-32212-323", icon: "", emergencia: false, categoria: "eqweqwe"),Contacto(nombre: "Cristina", number: "3232323", icon: "", emergencia: false, categoria: "otro"),Contacto(nombre: "marta", number: "123456", icon: "", emergencia: false, categoria: "eqweqwe")]
-        
-           //print(self.contacts[0].nombre + " " + self.contacts[0].categoria + " " + self.contacts[0].number)
+
+           contacts.removeAll()
+
+           do {
+               let data = try Data.init(contentsOf: dataFileUrl(namePlist: "Contactos"))
+               contacts = try PropertyListDecoder().decode([Contacto].self, from: data)
+           }
+           catch {
+               print("Error reading or decoding file")
+           }
            
        }
     
@@ -78,10 +73,6 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! categoriaCellTableViewCell
-        
-//        cell.name.text = contacts[indexPath.row].nombre
-//        cell.numeroCelular.text = contacts[indexPath.row].number
-//        cell.iconImage.image = UIImage(named: contacts[indexPath.row].icon)
         
         cell.name.text = filteredContacts[indexPath.row].nombre
         cell.numeroCelular.text = filteredContacts[indexPath.row].number
