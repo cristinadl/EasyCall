@@ -16,12 +16,31 @@ class AgregarContactoViewController: UIViewController,UIPickerViewDelegate, UIPi
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return categorias.count
     }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return  categorias[row].nombre
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//
+//        return categorias[row].nombre
+//
+//    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var view = UIView()
+        var img = UIImageView()
+        view.frame = CGRect(x: -30, y: 0, width: 20, height: 20)
+        img.frame = CGRect(x: -30, y: -30, width: 80, height: 80)
+        img.image = UIImage(named: categorias[row].icon)
+        var label = UILabel()
+        label.frame = CGRect(x: -40, y: -40, width: 200, height: 20)
+        label.text = categorias[row].nombre
         
+
+        view.addSubview(img)
+        view.addSubview(label)
+
+        return view
     }
+    
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 36.0
+        return 100
     }
     
     @IBOutlet weak var picker: UIPickerView!
