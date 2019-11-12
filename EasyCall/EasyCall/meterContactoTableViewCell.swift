@@ -7,6 +7,9 @@
 //
 
 import UIKit
+protocol protocoloCambiarCategoria {
+    func cambiarCategoria(cat : Categoria) -> Void
+}
 
 class meterContactoTableViewCell: UITableViewCell {
 
@@ -15,16 +18,23 @@ class meterContactoTableViewCell: UITableViewCell {
     @IBOutlet weak var categoria: UILabel!
     @IBOutlet weak var asignarCategoria: UIButton!
     
+    var num : String!
+    
+    var delegado : protocoloCambiarCategoria!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func cambiarCategoria(_ sender: UIButton){
+        
     }
     
     

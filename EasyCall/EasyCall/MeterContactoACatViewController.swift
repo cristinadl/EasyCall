@@ -98,13 +98,14 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! meterContactoTableViewCell
         
         if(isSearching){
-            let name = filteredData[indexPath.row].nombre
-            
-            
             cell.name.text = filteredData[indexPath.row].nombre
-            cell.categoria.text = filteredData[indexPath.row].categoria
-            
-//            cell.numeroLabel.text = filteredData[indexPath.row].number
+            if(filteredData[indexPath.row].categoria == ""){
+                cell.asignarCategoria.titleLabel?.text = "Asignar"
+                cell.categoria.text = "Sin categoria"
+            }else{
+                cell.asignarCategoria.titleLabel?.text = "Cambiar"
+                cell.categoria.text = filteredData[indexPath.row].categoria
+            }
             
             if(filteredData[indexPath.row].icon == ""){
                 cell.iconImage.backgroundColor = UIColor.init(red:0/255, green: 191/255, blue: 214/255, alpha: 1)
@@ -114,22 +115,22 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
             }
         }else{
             
-            let name = contacts[indexPath.row].nombre
+            cell.name.text = filteredData[indexPath.row].nombre
+            if(filteredData[indexPath.row].categoria == ""){
+                cell.asignarCategoria.titleLabel?.text = "Asignar"
+                cell.categoria.text = "Sin categoria"
+            }else{
+                cell.asignarCategoria.titleLabel?.text = "Cambiar"
+                cell.categoria.text = filteredData[indexPath.row].categoria
+            }
             
-            
-            
-            cell.name.text = name
-            cell.categoria.text = contacts[indexPath.row].categoria
-            
-//            cell.numeroLabel.text = contacts[indexPath.row].number
-            
-            if(contacts[indexPath.row].icon == ""){
+            if(filteredData[indexPath.row].icon == ""){
                 cell.iconImage.backgroundColor = UIColor.init(red:0/255, green: 191/255, blue: 214/255, alpha: 1)
             }else{
-                cell.iconImage.image = UIImage(named: contacts[indexPath.row].icon)
+                //                print(contacts[indexPath.section][indexPath.row])
+                cell.iconImage.image = UIImage(named: filteredData[indexPath.row].icon)
             }
         }
-        
         
         return cell
     }
@@ -137,5 +138,7 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
     }
+    
+    
 
 }
