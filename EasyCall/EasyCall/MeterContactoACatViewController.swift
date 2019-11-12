@@ -115,20 +115,20 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
             }
         }else{
             
-            cell.name.text = filteredData[indexPath.row].nombre
-            if(filteredData[indexPath.row].categoria == ""){
+            cell.name.text = contacts[indexPath.row].nombre
+            if(contacts[indexPath.row].categoria == ""){
                 cell.asignarCategoria.titleLabel?.text = "Asignar"
                 cell.categoria.text = "Sin categoria"
             }else{
                 cell.asignarCategoria.titleLabel?.text = "Cambiar"
-                cell.categoria.text = filteredData[indexPath.row].categoria
+                cell.categoria.text = contacts[indexPath.row].categoria
             }
             
-            if(filteredData[indexPath.row].icon == ""){
+            if(contacts[indexPath.row].icon == ""){
                 cell.iconImage.backgroundColor = UIColor.init(red:0/255, green: 191/255, blue: 214/255, alpha: 1)
             }else{
                 //                print(contacts[indexPath.section][indexPath.row])
-                cell.iconImage.image = UIImage(named: filteredData[indexPath.row].icon)
+                cell.iconImage.image = UIImage(named: contacts[indexPath.row].icon)
             }
         }
         

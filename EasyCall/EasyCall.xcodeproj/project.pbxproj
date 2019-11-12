@@ -12,6 +12,7 @@
 		8D2CE95823762C4B006489CC /* AgregarContactoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2CE95723762C4B006489CC /* AgregarContactoViewController.swift */; };
 		8D2CE95A23762C60006489CC /* BuscarContactoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2CE95923762C60006489CC /* BuscarContactoViewController.swift */; };
 		8D976B27237A39B7002EA55B /* meterContactoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D976B26237A39B7002EA55B /* meterContactoTableViewCell.swift */; };
+		8D976B29237A4622002EA55B /* escogerCategoriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D976B28237A4622002EA55B /* escogerCategoriaViewController.swift */; };
 		8DDC82C823539DB4000E7BFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC82C723539DB4000E7BFB /* AppDelegate.swift */; };
 		8DDC82CA23539DB4000E7BFB /* misCategoriasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC82C923539DB4000E7BFB /* misCategoriasViewController.swift */; };
 		8DDC82CD23539DB4000E7BFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DDC82CB23539DB4000E7BFB /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		8D2CE95723762C4B006489CC /* AgregarContactoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarContactoViewController.swift; sourceTree = "<group>"; };
 		8D2CE95923762C60006489CC /* BuscarContactoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscarContactoViewController.swift; sourceTree = "<group>"; };
 		8D976B26237A39B7002EA55B /* meterContactoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meterContactoTableViewCell.swift; sourceTree = "<group>"; };
+		8D976B28237A4622002EA55B /* escogerCategoriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = escogerCategoriaViewController.swift; sourceTree = "<group>"; };
 		8DDC82C423539DB4000E7BFB /* EasyCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DDC82C723539DB4000E7BFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DDC82C923539DB4000E7BFB /* misCategoriasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = misCategoriasViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				8D2CE95723762C4B006489CC /* AgregarContactoViewController.swift */,
 				8D2CE95923762C60006489CC /* BuscarContactoViewController.swift */,
 				8D976B26237A39B7002EA55B /* meterContactoTableViewCell.swift */,
+				8D976B28237A4622002EA55B /* escogerCategoriaViewController.swift */,
 			);
 			path = EasyCall;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D2CE95623762C39006489CC /* MeterContactoACatViewController.swift in Sources */,
+				8D976B29237A4622002EA55B /* escogerCategoriaViewController.swift in Sources */,
 				8DDC830523544102000E7BFB /* contactTableViewCell.swift in Sources */,
 				8D2CE95823762C4B006489CC /* AgregarContactoViewController.swift in Sources */,
 				8D2CE95A23762C60006489CC /* BuscarContactoViewController.swift in Sources */,

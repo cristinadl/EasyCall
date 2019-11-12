@@ -11,7 +11,7 @@ protocol protocoloCambiarCategoria {
     func cambiarCategoria(cat : Categoria) -> Void
 }
 
-class meterContactoTableViewCell: UITableViewCell {
+class meterContactoTableViewCell: UITableViewCell{
 
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var name: UILabel!
@@ -35,6 +35,7 @@ class meterContactoTableViewCell: UITableViewCell {
     
     @IBAction func cambiarCategoria(_ sender: UIButton){
         
+//         performSegue(withIdentifier: "categoriasSegue", sender: nil)
     }
     
     

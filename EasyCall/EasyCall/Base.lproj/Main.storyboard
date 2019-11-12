@@ -625,6 +625,10 @@ de tu categoria</string>
                                                     <rect key="frame" x="212" y="54" width="93" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Agregar"/>
+                                                    <connections>
+                                                        <action selector="cambiarCategoria:" destination="TRf-iW-HR0" eventType="touchUpInside" id="awD-Cg-XQ8"/>
+                                                        <segue destination="i41-Um-htX" kind="show" id="K4e-zI-ANp"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -653,6 +657,62 @@ de tu categoria</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="myJ-bH-3YH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-356" y="1859"/>
+        </scene>
+        <!--Escoger Categoria View Controller-->
+        <scene sceneID="yky-BI-5uS">
+            <objects>
+                <viewController id="i41-Um-htX" customClass="escogerCategoriaViewController" customModule="EasyCall" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DV4-c4-CTU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HmM-08-i1U">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="151" id="zgk-gC-LAm" customClass="categoriaCellTableViewCell" customModule="EasyCall" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="151"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zgk-gC-LAm" id="kMc-cD-M1q">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="150.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hD8-fJ-mPo">
+                                                    <rect key="frame" x="-7" y="108" width="321" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nEK-Zp-T2E">
+                                                    <rect key="frame" x="105" y="7" width="106" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="iconImage" destination="nEK-Zp-T2E" id="az3-aX-I7h"/>
+                                            <outlet property="name" destination="hD8-fJ-mPo" id="Xdr-ht-Aum"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="i41-Um-htX" id="Hqq-G1-6e8"/>
+                                    <outlet property="delegate" destination="i41-Um-htX" id="6R3-1X-hqV"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="3hN-tE-arG"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="HmM-08-i1U" id="oei-Wi-TQq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fPh-eL-ra7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="436.875" y="1869.7183098591549"/>
         </scene>
         <!--Buscar Contacto View Controller-->
         <scene sceneID="qPw-9y-o4D">
@@ -831,7 +891,7 @@ de tu categoria</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xRG-Uu-RCc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1023.75" y="1619.3661971830986"/>
+            <point key="canvasLocation" x="1913" y="1619"/>
         </scene>
     </scenes>
     <resources>
