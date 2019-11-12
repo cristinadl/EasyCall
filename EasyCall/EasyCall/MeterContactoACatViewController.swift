@@ -96,6 +96,7 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! meterContactoTableViewCell
         
         if(isSearching){
+            cell.contacto = contacts[indexPath.row]
             cell.name.text = filteredData[indexPath.row].nombre
             if(filteredData[indexPath.row].categoria == ""){
                 cell.asignarCategoria.titleLabel?.text = "Asignar"
@@ -112,6 +113,8 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
                 cell.iconImage.image = UIImage(named: filteredData[indexPath.row].icon)
             }
         }else{
+            
+            cell.contacto = contacts[indexPath.row]
             
             cell.name.text = contacts[indexPath.row].nombre
             if(contacts[indexPath.row].categoria == ""){
@@ -140,8 +143,7 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let viewCambiar = segue.destination as! escogerCategoriaViewController
         viewCambiar.delegado = self
-        let indice = tableView.indexPathForSelectedRow!
-        viewCambiar.contactoSeleccionado = contacts[indice.row]
+        viewCambiar.contactoSeleccionado = contactoAcambiar
     }
     
     func cambiarCategoria(cont: Contacto) {

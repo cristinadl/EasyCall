@@ -11,12 +11,16 @@ protocol protocoloCambiarCategoria {
     func cambiarCategoria(cat : Categoria) -> Void
 }
 
+var contactoAcambiar : Contacto!
+
 class meterContactoTableViewCell: UITableViewCell{
 
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var categoria: UILabel!
     @IBOutlet weak var asignarCategoria: UIButton!
+    
+    var contacto : Contacto!
     
     var num : String!
     
@@ -34,10 +38,7 @@ class meterContactoTableViewCell: UITableViewCell{
     }
     
     @IBAction func cambiarCategoria(_ sender: UIButton){
-        
-//         performSegue(withIdentifier: "categoriasSegue", sender: nil)
+        contactoAcambiar = contacto
     }
     
-    
-
 }
