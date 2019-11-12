@@ -12,9 +12,6 @@ import Contacts
 
 class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource , UISearchBarDelegate {
     
-    
-    
-    
     var contacts = [Contacto]()
     var filteredData = [Contacto]()
     var isSearching = false
