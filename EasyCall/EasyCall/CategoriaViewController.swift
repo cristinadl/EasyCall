@@ -16,6 +16,8 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
     
     var delegado : protocoloEliminarCategoria!
     
+    @IBOutlet weak var tableView: UITableView!
+    
     var nombreCat : String!
     var contacts = [Contacto]()
     var filteredContacts = [Contacto]()
@@ -37,7 +39,7 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
     }
     
     func filtrarContactos(){
-        for contact in contacts{
+        for contact in contacts {
             if(contact.categoria == nombreCat){
                 filteredContacts.append(contact)
             }
@@ -46,16 +48,19 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
     
     @IBAction func obtenerContactos() {
            // borro la lista para verificar que sí se obtengan
-           contacts.removeAll()
-           
-           do {
-               let data = try Data.init(contentsOf: dataFileUrl(namePlist: "Contactos"))
-               contacts = try PropertyListDecoder().decode([Contacto].self, from: data)
-           }
-           catch {
-               print("Error reading or decoding file")
-           }
-           
+//           contacts.removeAll()
+//
+//           do {
+//               let data = try Data.init(contentsOf: dataFileUrl(namePlist: "Contactos"))
+//               contacts = try PropertyListDecoder().decode([Contacto].self, from: data)
+//           }
+//           catch {
+//               print("Error reading or decoding file")
+//           }
+//
+        
+        contacts = [Contacto(nombre: "marian", number: "3232323", icon: "", emergencia: false, categoria: "eqweqwe"),Contacto(nombre: "Cristina", number: "3232323", icon: "", emergencia: false, categoria: "otro"),Contacto(nombre: "marta", number: "123456", icon: "", emergencia: false, categoria: "eqweqwe")]
+        
            //print(self.contacts[0].nombre + " " + self.contacts[0].categoria + " " + self.contacts[0].number)
            
        }
@@ -63,15 +68,26 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredContacts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contactosXcategoria", for: indexPath) as! contactTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! categoriaCellTableViewCell
         
-        cell.nombreLabel.text = filteredContacts[indexPath.row].nombre
+//        cell.name.text = contacts[indexPath.row].nombre
+//        cell.numeroCelular.text = contacts[indexPath.row].number
+//        cell.iconImage.image = UIImage(named: contacts[indexPath.row].icon)
+        
+        cell.name.text = filteredContacts[indexPath.row].nombre
+        cell.numeroCelular.text = filteredContacts[indexPath.row].number
+        cell.iconImage.image = UIImage(named: filteredContacts[indexPath.row].icon)
+
+        
 
         return cell
     }

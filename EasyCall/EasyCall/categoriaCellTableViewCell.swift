@@ -12,6 +12,8 @@ class categoriaCellTableViewCell: UITableViewCell {
 
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var numeroCelular: UILabel!
+    @IBOutlet weak var llamarContacto: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,5 +25,9 @@ class categoriaCellTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    @IBAction func llamandoAContacto(_ sender: Any) {
+        print("llamando a \(name.text) con numero: \(numeroCelular.text)")
+    }
+    
 
 }
