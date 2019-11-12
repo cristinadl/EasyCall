@@ -65,7 +65,9 @@ class menuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             segueToGo = "buscarSegue"
         }
         if(menuItems[indexPath.row].nombre == "Meter un Contacto en una Categoria"){
-            segueToGo = "meterContactoACatSegue"
+            segueToGo =
+            "meterContactoACatSegue"
+            
         }
         
 //        if(menuItems[indexPath.row].nombre == "Agregar mi lista de Contactos"){
