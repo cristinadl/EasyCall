@@ -15,7 +15,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var contactStore = CNContactStore()
+    var contacts = [Contacto]()
 
+    func dataFileUrl(namePlist: String) -> URL {
+        let url = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+        let pathArchivo = url.appendingPathComponent(namePlist + ".plist")
+        return pathArchivo
+    }
+    
+    @IBAction func guardarContactos() {
+        
+        print(contacts.count)
+        do {
+            let data = try PropertyListEncoder().encode(contacts)
+            try data.write(to: dataFileUrl(namePlist: "Contactos"))
+        }
+        catch {
+            print("Save Failed")
+        }
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         contactStore.requestAccess(for: .contacts, completionHandler: { (success,error) in
@@ -24,6 +43,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
         })
+        
+        do {
+            let data = try Data.init(contentsOf: dataFileUrl(namePlist: "Contactos"))
+            contacts = try PropertyListDecoder().decode([Contacto].self, from: data)
+        }
+        catch {
+            print("Error reading or decoding file")
+        }
         
         // Override point for customization after application launch.
         return true
