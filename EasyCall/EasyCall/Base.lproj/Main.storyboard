@@ -481,6 +481,7 @@ de tu categoria</string>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="emergenciaButton" destination="fOS-ko-fNH" id="NI4-mY-Rnz"/>
                                             <outlet property="iconImage" destination="Xkp-ck-Maj" id="YU6-8v-qEM"/>
                                             <outlet property="nombreLabel" destination="2Co-Dr-VI7" id="o2I-0J-X4q"/>
                                             <outlet property="numeroLabel" destination="TlX-oh-EMm" id="dxM-2z-puo"/>
