@@ -68,7 +68,22 @@ class AgregarContactoViewController: UIViewController,UIPickerViewDelegate, UIPi
         // Do any additional setup after loading the view.
     }
     
+    @IBOutlet weak var tfNombre: UITextField!
+    @IBOutlet weak var tfApellido: UITextField!
+    @IBOutlet weak var tfNumero: UITextField!
+    
+    
     @IBAction func guardarContactos() {
+        var contact: Contacto!
+        var contactDet : ContactDetails!
+        
+        contact.nombre = tfNombre.text! + " " + tfApellido.text!
+        contact.number = tfNumero.text!
+        
+        contactDet.givenName = tfNombre.text!
+        contactDet.familyName = tfApellido.text!
+        contactDet.numbers = ["mobile":contact.number]
+        
         
         print(contacts.count)
         do {
@@ -78,6 +93,8 @@ class AgregarContactoViewController: UIViewController,UIPickerViewDelegate, UIPi
         catch {
             print("Save Failed")
         }
+        
+          RZNContacts.addContact(contactDet)
     }
     
     @IBAction func obtenerCategorias() {
@@ -124,3 +141,4 @@ class AgregarContactoViewController: UIViewController,UIPickerViewDelegate, UIPi
     */
 
 }
+
