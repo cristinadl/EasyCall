@@ -9,13 +9,67 @@
 import UIKit
 
 class AgregarContactoViewController: UIViewController {
+    
+    var contacts = [Contacto]()
+    var categorias = [Categoria]()
 
+    func dataFileUrl(namePlist: String) -> URL {
+        let url = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+        let pathArchivo = url.appendingPathComponent(namePlist + ".plist")
+        return pathArchivo
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        obtenerContactos()
+        obtenerCategorias()
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func guardarContactos() {
+        
+        print(contacts.count)
+        do {
+            let data = try PropertyListEncoder().encode(contacts)
+            try data.write(to: dataFileUrl(namePlist: "Contactos"))
+        }
+        catch {
+            print("Save Failed")
+        }
+    }
+    
+    @IBAction func obtenerCategorias() {
+        // borro la lista para verificar que sí se obtengan
+        categorias.removeAll()
+        
+        do {
+            let data = try Data.init(contentsOf: dataFileUrl(namePlist: "Categoria"))
+            categorias = try PropertyListDecoder().decode([Categoria].self, from: data)
+        }
+        catch {
+            print("Error reading or decoding file")
+        }
+        
+        for cat in categorias {
+            print (cat.nombre, cat.icon)
+        }
+    }
+    
+    @IBAction func obtenerContactos() {
+        // borro la lista para verificar que sí se obtengan
+        contacts.removeAll()
+        
+        do {
+            let data = try Data.init(contentsOf: dataFileUrl(namePlist: "Contactos"))
+            contacts = try PropertyListDecoder().decode([Contacto].self, from: data)
+        }
+        catch {
+            print("Error reading or decoding file")
+        }
+        
+        //print(self.contacts[0].nombre + " " + self.contacts[0].categoria + " " + self.contacts[0].number)
+        
+    }
 
     /*
     // MARK: - Navigation

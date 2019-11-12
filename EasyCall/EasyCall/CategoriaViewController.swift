@@ -12,20 +12,68 @@ protocol protocoloEliminarCategoria {
     func eliminarCategoria(cat : Categoria) -> Void
 }
 
-class CategoriaViewController: UIViewController {
+class CategoriaViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
     var delegado : protocoloEliminarCategoria!
     
     var nombreCat : String!
+    var contacts = [Contacto]()
+    var filteredContacts = [Contacto]()
+    
+    func dataFileUrl(namePlist: String) -> URL {
+        let url = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+        let pathArchivo = url.appendingPathComponent(namePlist + ".plist")
+        return pathArchivo
+    }
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        obtenerContactos()
         title = nombreCat
-        // ola k ase
+        filtrarContactos()
+        
+    }
+    
+    func filtrarContactos(){
+        for contact in contacts{
+            if(contact.categoria == nombreCat){
+                filteredContacts.append(contact)
+            }
+        }
+    }
+    
+    @IBAction func obtenerContactos() {
+           // borro la lista para verificar que sí se obtengan
+           contacts.removeAll()
+           
+           do {
+               let data = try Data.init(contentsOf: dataFileUrl(namePlist: "Contactos"))
+               contacts = try PropertyListDecoder().decode([Contacto].self, from: data)
+           }
+           catch {
+               print("Error reading or decoding file")
+           }
+           
+           //print(self.contacts[0].nombre + " " + self.contacts[0].categoria + " " + self.contacts[0].number)
+           
+       }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        filteredContacts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactosXcategoria", for: indexPath) as! contactTableViewCell
+        
+        cell.nombreLabel.text = filteredContacts[indexPath.row].nombre
 
-        // Do any additional setup after loading the view.
+        return cell
     }
     
     @IBAction func eliminarCategoria(_ sender: UIButton) {

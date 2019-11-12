@@ -100,6 +100,14 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
     
     //MARK: - Métodos del protocolo Agregar Jugador
     func agregaCategoria(cat: Categoria) {
+        for categoria in categorias{
+            if(categoria.nombre == cat.nombre){
+                let alert = UIAlertController(title: "Ese nombre de categoría ya existe", message: "Intente de nuevo con otro nombre", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Button", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
+        }
         categorias.append(cat)
         guardarCategoria()
         tableView.reloadData()
