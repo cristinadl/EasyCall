@@ -8,10 +8,28 @@
 
 import UIKit
 
-class AgregarContactoViewController: UIViewController {
+class AgregarContactoViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+       1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return categorias.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return  categorias[row].nombre
+        
+    }
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 36.0
+    }
+    
+    @IBOutlet weak var picker: UIPickerView!
     
     var contacts = [Contacto]()
     var categorias = [Categoria]()
+    //var pickerData: [[String]] = [[String]]()
+    var pickerData = [Categoria(nombre: "amigos", icon: "amigos")]
 
     func dataFileUrl(namePlist: String) -> URL {
         let url = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -23,6 +41,11 @@ class AgregarContactoViewController: UIViewController {
         super.viewDidLoad()
         obtenerContactos()
         obtenerCategorias()
+        self.picker.delegate = self
+        self.picker.dataSource = self
+       //pickerData = String[Categoria(nombre: "amigos", icon: "amigos")]
+        
+        
         // Do any additional setup after loading the view.
     }
     
