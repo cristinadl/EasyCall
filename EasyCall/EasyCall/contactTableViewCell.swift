@@ -62,11 +62,9 @@ class contactTableViewCell: UITableViewCell {
                     emergenciaButton.setTitle("Agregado", for: .normal)
                 }
             }
-            appDelegate.contacts = contacts
-            appDelegate.guardarContactos()
         }
         
-        
+        appDelegate.contacts = contacts
     }
     
     

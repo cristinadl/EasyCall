@@ -31,11 +31,6 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
         
     }
     
-    func dataFileUrl(namePlist: String) -> URL {
-        let url = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-        let pathArchivo = url.appendingPathComponent(namePlist + ".plist")
-        return pathArchivo
-    }
     
 
     override func viewDidLoad() {
@@ -46,6 +41,12 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
         
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
+    }
+    
+    func dataFileUrl(namePlist: String) -> URL {
+        let url = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+        let pathArchivo = url.appendingPathComponent(namePlist + ".plist")
+        return pathArchivo
     }
     
     @IBAction func guardarContactos() {
@@ -64,17 +65,16 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
         // borro la lista para verificar que sí se obtengan
         contacts.removeAll()
         
-//        do {
-//            let data = try Data.init(contentsOf: dataFileUrl(namePlist: "Contactos"))
-//            contacts = try PropertyListDecoder().decode([Contacto].self, from: data)
-//        }
-//        catch {
-//            print("Error reading or decoding file")
-//        }
+        do {
+            let data = try Data.init(contentsOf: dataFileUrl(namePlist: "Contactos"))
+            contacts = try PropertyListDecoder().decode([Contacto].self, from: data)
+        }
+        catch {
+            print("Error reading or decoding file")
+        }
         
-        contacts = appDelegate.contacts
         
-        //print(self.contacts[0].nombre + " " + self.contacts[0].categoria + " " + self.contacts[0].number)
+        print(self.contacts[0].nombre + " " + self.contacts[0].categoria + " " + self.contacts[0].number)
         
     }
     
@@ -121,6 +121,7 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
                 cell.iconImage.image = UIImage(named: filteredData[indexPath.row].icon)
             }
             
+            
             if(filteredData[indexPath.row].emergencia){
                 cell.emergenciaButton.backgroundColor = UIColor(red: 51/255, green: 190/255, blue: 255/255, alpha: 1)
                 cell.emergenciaButton.setTitle("Agregar", for: .normal)
@@ -133,8 +134,6 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
             
             let name = contacts[indexPath.row].nombre
             
-            
-            
             cell.nombreLabel.text = name
             
             cell.numeroLabel.text = contacts[indexPath.row].number
@@ -144,6 +143,15 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
             }else{
                 cell.iconImage.image = UIImage(named: contacts[indexPath.row].icon)
             }
+            
+            if(contacts[indexPath.row].emergencia){
+                cell.emergenciaButton.backgroundColor = UIColor(red: 51/255, green: 190/255, blue: 255/255, alpha: 1)
+                cell.emergenciaButton.setTitle("Agregar", for: .normal)
+            }else{
+                cell.emergenciaButton.backgroundColor = UIColor(red: 51/255, green: 190/255, blue: 119/255, alpha: 1)
+                cell.emergenciaButton.setTitle("Agregado", for: .normal)
+            }
+            
         }
         
         
