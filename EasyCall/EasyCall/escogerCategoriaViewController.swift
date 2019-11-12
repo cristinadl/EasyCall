@@ -17,6 +17,7 @@ class escogerCategoriaViewController: UIViewController, UITableViewDelegate, UIT
 //    var isSearching = false
     
     var delegado : protocoloCambiar!
+    var contactoSeleccionado : Contacto!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -60,31 +61,15 @@ class escogerCategoriaViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        contactoSeleccionado.categoria = categorias[indexPath.row].nombre
+        contactoSeleccionado.icon = categorias[indexPath.row].icon
+        delegado.cambiarCategoria(cont: contactoSeleccionado)
         navigationController?.popViewController(animated: true)
     }
     
     
     
     // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if(segue.identifier == "agregarCategoria"){
-//            let viewAgregar = segue.destination as! agregarCategoriaViewController
-////            viewAgregar.delegado = self
-//        }
-//        if(segue.identifier == "contactosCategoria"){
-//            let viewCategoria = segue.destination as! CategoriaViewController
-////            viewCategoria.delegado = self
-//            let indice = tableView.indexPathForSelectedRow!
-//            viewCategoria.nombreCat = categorias[indice.row].nombre
-//        }
-//        //else{
-//        //let viewAgregar = segue.destination as! menuViewController
-//        //}
-    }
-    
-    
     
 
     @IBAction func obtenerCategorias() {

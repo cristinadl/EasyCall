@@ -10,7 +10,8 @@ import UIKit
 import CoreData
 import Contacts
 
-class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource , UISearchBarDelegate {
+class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource , UISearchBarDelegate, protocoloCambiar {
+    
     
     var contacts = [Contacto]()
     var filteredData = [Contacto]()
@@ -137,14 +138,23 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "agregarCategoria"){
-            let viewAgregar = segue.destination as! agregarCategoriaViewController
-//            viewAgregar.delegado = self
-        }
-        //else{
-            //let viewAgregar = segue.destination as! menuViewController
-        //}
+        let viewCambiar = segue.destination as! escogerCategoriaViewController
+        viewCambiar.delegado = self
+        let indice = tableView.indexPathForSelectedRow!
+        viewCambiar.contactoSeleccionado = contacts[indice.row]
     }
+    
+    func cambiarCategoria(cont: Contacto) {
+        for contact in contacts{
+            if(contact.nombre == cont.nombre && contact.number == cont.number){
+                contact.categoria = cont.categoria
+                contact.icon = cont.icon
+            }
+        }
+        guardarContactos()
+        tableView.reloadData()
+    }
+    
     
     
 
