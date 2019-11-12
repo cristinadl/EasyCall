@@ -92,12 +92,17 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
             let indice = tableView.indexPathForSelectedRow!
             viewCategoria.nombreCat = categorias[indice.row].nombre
         }
-//        if(segue.identifier == "ContactoEmergencia"){
-//            performSegue(withIdentifier: "agregarCategoria", sender: nil)
-//        }
                 
     }
     
+    @IBAction func contactoEmergenciaClick(_ sender: UIButton) {
+        for cont in contacts{
+            if(cont.emergencia){
+                performSegue(withIdentifier: "llamarEmergencia", sender: nil)
+            }
+        }
+        performSegue(withIdentifier: "ContactoEmergencia", sender: nil)
+    }
     
     //MARK: - Métodos del protocolo Agregar Jugador
     func agregaCategoria(cat: Categoria) {

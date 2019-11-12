@@ -124,7 +124,7 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                 <state key="normal" title="                    LLAMADA DE EMERGENCIA   " backgroundImage="emergenciaIcon"/>
                                 <connections>
-                                    <segue destination="LF0-pF-Uhk" kind="show" identifier="ContactoEmergencia" id="r4a-sl-Bmc"/>
+                                    <action selector="contactoEmergenciaClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L9F-SJ-ja0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeX-Bu-fmU">
@@ -197,6 +197,8 @@
                     <navigationItem key="navigationItem" id="43W-3m-e0u"/>
                     <connections>
                         <outlet property="tableView" destination="tcJ-ea-RSD" id="WbV-kL-5Ug"/>
+                        <segue destination="LF0-pF-Uhk" kind="show" identifier="ContactoEmergencia" id="hkR-wY-9uO"/>
+                        <segue destination="bM0-NM-oXO" kind="show" identifier="llamarEmergencia" id="Ray-qY-Ux4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -404,6 +406,22 @@ de tu categoria</string>
             </objects>
             <point key="canvasLocation" x="847.5" y="184.85915492957747"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="uco-da-aiq">
+            <objects>
+                <viewController id="bM0-NM-oXO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zdM-1U-F2i">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="KYB-hj-9J5"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ePZ-uB-HsQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nfr-48-tPk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1740" y="1276"/>
+        </scene>
         <!--Contacto Emergencia View Controller-->
         <scene sceneID="HD6-KH-E96">
             <objects>
@@ -501,6 +519,7 @@ de tu categoria</string>
                         <viewLayoutGuide key="safeArea" id="bb2-91-m6f"/>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ZKC-Ty-47M"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="Oix-Dr-uiv" id="3wE-9w-wfm"/>
