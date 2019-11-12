@@ -92,9 +92,10 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
             let indice = tableView.indexPathForSelectedRow!
             viewCategoria.nombreCat = categorias[indice.row].nombre
         }
-        //else{
-            //let viewAgregar = segue.destination as! menuViewController
-        //}
+//        if(segue.identifier == "ContactoEmergencia"){
+//            performSegue(withIdentifier: "agregarCategoria", sender: nil)
+//        }
+                
     }
     
     
