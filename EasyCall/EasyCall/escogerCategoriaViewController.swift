@@ -56,7 +56,8 @@ class escogerCategoriaViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("quiero esta categoria = \(categorias[indexPath.row])")
+        
+        navigationController?.popViewController(animated: true)
     }
     
     
