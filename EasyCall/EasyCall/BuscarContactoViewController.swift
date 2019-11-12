@@ -115,7 +115,11 @@ class BuscarContactoViewController: UIViewController, UISearchBarDelegate, UITab
             
             let name = contacts[indexPath.row].nombre
             
-            
+            if(contacts[indexPath.row].emergencia){
+                print("\(contacts[indexPath.row].nombre) es emergencia")
+            }else{
+                print("\(contacts[indexPath.row].nombre) no es emergencia")
+            }
             
             cell.nombreLabel.text = name
             

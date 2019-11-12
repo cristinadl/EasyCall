@@ -64,17 +64,19 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
     @IBAction func obtenerContactos() {
         // borro la lista para verificar que sí se obtengan
         contacts.removeAll()
-        
-        do {
-            let data = try Data.init(contentsOf: dataFileUrl(namePlist: "Contactos"))
-            contacts = try PropertyListDecoder().decode([Contacto].self, from: data)
-        }
-        catch {
-            print("Error reading or decoding file")
-        }
-        
-        
-        print(self.contacts[0].nombre + " " + self.contacts[0].categoria + " " + self.contacts[0].number)
+//
+//        do {
+//            let data = try Data.init(contentsOf: dataFileUrl(namePlist: "Contactos"))
+//            contacts = try PropertyListDecoder().decode([Contacto].self, from: data)
+//        }
+//        catch {
+//            print("Error reading or decoding file")
+//        }
+//
+//
+//        print(self.contacts[0].nombre + " " + self.contacts[0].categoria + " " + self.contacts[0].number)
+        contacts = appDelegate.contacts
+//        guardarContactos()
         
     }
     
@@ -145,11 +147,12 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
             }
             
             if(contacts[indexPath.row].emergencia){
-                cell.emergenciaButton.backgroundColor = UIColor(red: 51/255, green: 190/255, blue: 255/255, alpha: 1)
-                cell.emergenciaButton.setTitle("Agregar", for: .normal)
-            }else{
                 cell.emergenciaButton.backgroundColor = UIColor(red: 51/255, green: 190/255, blue: 119/255, alpha: 1)
                 cell.emergenciaButton.setTitle("Agregado", for: .normal)
+                
+            }else{
+                cell.emergenciaButton.backgroundColor = UIColor(red: 51/255, green: 190/255, blue: 255/255, alpha: 1)
+                cell.emergenciaButton.setTitle("Agregar", for: .normal)
             }
             
         }

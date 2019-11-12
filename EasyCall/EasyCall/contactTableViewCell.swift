@@ -65,6 +65,7 @@ class contactTableViewCell: UITableViewCell {
         }
         
         appDelegate.contacts = contacts
+        appDelegate.guardarContactos()
     }
     
     

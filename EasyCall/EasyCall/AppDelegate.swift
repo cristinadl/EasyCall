@@ -23,6 +23,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return pathArchivo
     }
     
+    @IBAction func guardarContactos() {
+        
+        print(contacts.count)
+        do {
+            let data = try PropertyListEncoder().encode(contacts)
+            try data.write(to: dataFileUrl(namePlist: "Contactos"))
+        }
+        catch {
+            print("Save Failed")
+        }
+    }
+    
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
