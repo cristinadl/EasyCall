@@ -25,8 +25,16 @@ class categoriaCellTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func callContact(number: String){
+        if let url = URL(string: "tel://\(number)"), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.openURL(url)
+        }
+    }
+    
     @IBAction func llamandoAContacto(_ sender: Any) {
-        print("llamando a \(name.text) con numero: \(numeroCelular.text)")
+         callContact(number: (numeroCelular.text?.digits)!)
+//        print("llamando a \(name.text) con numero: \(numeroCelular.text)")
     }
     
 

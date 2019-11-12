@@ -36,7 +36,7 @@ class contactTableViewCell: UITableViewCell {
     }
     
     @IBAction func callPressed(_ sender: Any) {
-        callContact(number: "6424829526")
+        callContact(number: (numeroLabel.text?.digits)!)
     }
     
     @IBAction func EmergenciaPressed(_ sender: Any) {
@@ -47,4 +47,11 @@ class contactTableViewCell: UITableViewCell {
     
     
 
+}
+
+extension String {
+    var digits: String {
+        return components(separatedBy: CharacterSet.decimalDigits.inverted)
+            .joined()
+    }
 }

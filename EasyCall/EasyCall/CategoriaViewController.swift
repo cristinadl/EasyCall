@@ -59,7 +59,7 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
 //           }
 //
         
-        contacts = [Contacto(nombre: "marian", number: "3232323", icon: "", emergencia: false, categoria: "eqweqwe"),Contacto(nombre: "Cristina", number: "3232323", icon: "", emergencia: false, categoria: "otro"),Contacto(nombre: "marta", number: "123456", icon: "", emergencia: false, categoria: "eqweqwe")]
+        contacts = [Contacto(nombre: "marian", number: "32122-32212-323", icon: "", emergencia: false, categoria: "eqweqwe"),Contacto(nombre: "Cristina", number: "3232323", icon: "", emergencia: false, categoria: "otro"),Contacto(nombre: "marta", number: "123456", icon: "", emergencia: false, categoria: "eqweqwe")]
         
            //print(self.contacts[0].nombre + " " + self.contacts[0].categoria + " " + self.contacts[0].number)
            

@@ -79,7 +79,7 @@ class escogerCategoriaViewController: UIViewController, UITableViewDelegate, UIT
 //        //}
     }
     
-
+    
     
 
     @IBAction func obtenerCategorias() {
