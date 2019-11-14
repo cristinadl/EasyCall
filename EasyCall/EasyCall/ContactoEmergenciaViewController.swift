@@ -64,19 +64,16 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
     @IBAction func obtenerContactos() {
         // borro la lista para verificar que sí se obtengan
         contacts.removeAll()
-//
-//        do {
-//            let data = try Data.init(contentsOf: dataFileUrl(namePlist: "Contactos"))
-//            contacts = try PropertyListDecoder().decode([Contacto].self, from: data)
-//        }
-//        catch {
-//            print("Error reading or decoding file")
-//        }
-//
-//
-//        print(self.contacts[0].nombre + " " + self.contacts[0].categoria + " " + self.contacts[0].number)
-        contacts = appDelegate.contacts
-//        guardarContactos()
+
+        do {
+            let data = try Data.init(contentsOf: dataFileUrl(namePlist: "Contactos"))
+            contacts = try PropertyListDecoder().decode([Contacto].self, from: data)
+        }
+        catch {
+            print("Error reading or decoding file")
+        }
+
+        guardarContactos()
         
     }
     

@@ -15,13 +15,23 @@ class contactTableViewCell: UITableViewCell {
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var callButton: UIButton!
     @IBOutlet weak var emergenciaButton: UIButton!
+    
+    var contacts = [Contacto]()
 //    var botonAgregar: UIButton!
     
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
+    
+    func dataFileUrl(namePlist: String) -> URL {
+        let url = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+        let pathArchivo = url.appendingPathComponent(namePlist + ".plist")
+        return pathArchivo
+    }
+    
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        obtenerContactos()
         // Initialization code
     }
 
@@ -44,7 +54,6 @@ class contactTableViewCell: UITableViewCell {
     @IBAction func EmergenciaPressed(_ sender: Any) {
         // aqui pones que es contacto de emergenecia
 
-        let contacts = appDelegate.contacts
         
         for contact in contacts {
             if(nombreLabel.text == contact.nombre){
@@ -63,10 +72,37 @@ class contactTableViewCell: UITableViewCell {
                 }
             }
         }
-        
-        appDelegate.contacts = contacts
-        appDelegate.guardarContactos()
+        guardarContactos()
     }
+    
+    
+       @IBAction func guardarContactos() {
+           
+           print(contacts.count)
+           do {
+               let data = try PropertyListEncoder().encode(contacts)
+               try data.write(to: dataFileUrl(namePlist: "Contactos"))
+           }
+           catch {
+               print("Save Failed")
+           }
+       }
+       
+       @IBAction func obtenerContactos() {
+           // borro la lista para verificar que sí se obtengan
+           contacts.removeAll()
+
+           do {
+               let data = try Data.init(contentsOf: dataFileUrl(namePlist: "Contactos"))
+               contacts = try PropertyListDecoder().decode([Contacto].self, from: data)
+           }
+           catch {
+               print("Error reading or decoding file")
+           }
+
+           guardarContactos()
+           
+       }
     
     
 
@@ -79,8 +115,8 @@ extension String {
     }
 }
 
-extension UIViewController {
-    var appDelegate: AppDelegate {
-        return UIApplication.shared.delegate as! AppDelegate
-    }
-}
+//extension UIViewController {
+//    var appDelegate: AppDelegate {
+//        return UIApplication.shared.delegate as! AppDelegate
+//    }
+//}

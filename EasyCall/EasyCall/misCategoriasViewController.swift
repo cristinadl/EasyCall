@@ -58,11 +58,20 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
                 }
                 
             })
-            
             fetchContacts()
+            cleanContacts()
         }
     }
     
+    func cleanContacts(){
+        for contact in contacts{
+            if(contact.number != ""){
+                let num = String(contact.number.digits.suffix(10))
+                contact.number = num
+            }
+            guardarContactos()
+        }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! categoriaCellTableViewCell
