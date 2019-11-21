@@ -106,6 +106,7 @@ class llamarEmergenciaViewController: UIViewController, UITableViewDataSource, U
         }else{
             cell.iconImage.backgroundColor = UIColor.white
             cell.iconImage.image = UIImage(named: contactosEmergencia[indexPath.row].icon)
+            cell.iconImage.contentMode = .scaleAspectFit
         }
         
         

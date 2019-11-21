@@ -101,14 +101,15 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
             cell.contacto = contacts[indexPath.row]
             cell.name.text = filteredData[indexPath.row].getNombreCompleto()
             if(filteredData[indexPath.row].categoria == ""){
-                cell.asignarCategoria.titleLabel?.text = "Asignar"
+
+                cell.asignarCategoria.titleLabel?.text = "Modificar"
                 cell.categoria.text = "Sin categoria"
                 cell.iconImage.backgroundColor = UIColor.groupTableViewBackground
                 cell.iconImage.image = UIImage()
                 cell.iconImage.layer.cornerRadius = cell.iconImage.frame.height / 2
                 
             }else{
-                cell.asignarCategoria.titleLabel?.text = "Cambiar"
+                cell.asignarCategoria.titleLabel?.text = "Modificar"
                 cell.categoria.text = filteredData[indexPath.row].categoria
                 cell.iconImage.backgroundColor = UIColor.white
                 cell.iconImage.image = UIImage(named: contacts[indexPath.row].icon)
@@ -120,13 +121,13 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
             
             cell.name.text = contacts[indexPath.row].getNombreCompleto()
             if(contacts[indexPath.row].categoria == ""){
-                cell.asignarCategoria.titleLabel?.text = "Asignar"
+                cell.asignarCategoria.titleLabel?.text = "Modificar"
                 cell.categoria.text = "Sin categoria"
                 cell.iconImage.backgroundColor = UIColor.groupTableViewBackground
                 cell.iconImage.image = UIImage()
                 cell.iconImage.layer.cornerRadius = cell.iconImage.frame.height / 2
             }else{
-                cell.asignarCategoria.titleLabel?.text = "Cambiar"
+                cell.asignarCategoria.titleLabel?.text = "Modificar"
                 cell.categoria.text = contacts[indexPath.row].categoria
                 cell.iconImage.backgroundColor = UIColor.white
                 cell.iconImage.image = UIImage(named: contacts[indexPath.row].icon)

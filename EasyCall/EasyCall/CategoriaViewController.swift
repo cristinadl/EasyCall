@@ -99,6 +99,7 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
         cell.name.text = filteredContacts[indexPath.row].getNombreCompleto()
         cell.numeroCelular.text = filteredContacts[indexPath.row].number
         cell.iconImage.image = UIImage(named: filteredContacts[indexPath.row].icon)
+        cell.iconImage.contentMode = .scaleAspectFit
         cell.apellido = filteredContacts[indexPath.row].apellido
         cell.nombre = filteredContacts[indexPath.row].nombre
         cell.delegado = self

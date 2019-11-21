@@ -116,9 +116,11 @@ class BuscarContactoViewController: UIViewController, UISearchBarDelegate, UITab
                 cell.iconImage.image = UIImage()
                 cell.iconImage.backgroundColor = UIColor.groupTableViewBackground
                 cell.iconImage.layer.cornerRadius = cell.iconImage.frame.width / 2
+                cell.iconImage.contentMode = .scaleAspectFit
             }else{
                 cell.iconImage.backgroundColor = UIColor.white
                 cell.iconImage.image = UIImage(named: filteredData[indexPath.row].icon)
+                cell.iconImage.contentMode = .scaleAspectFit
             }
         }else{
             
@@ -138,9 +140,11 @@ class BuscarContactoViewController: UIViewController, UISearchBarDelegate, UITab
                 cell.iconImage.image = UIImage()
                 cell.iconImage.backgroundColor = UIColor.groupTableViewBackground
                 cell.iconImage.layer.cornerRadius = cell.iconImage.frame.width / 2
+                cell.iconImage.contentMode = .scaleAspectFit
             }else{
                 cell.iconImage.backgroundColor = UIColor.white
                 cell.iconImage.image = UIImage(named: contacts[indexPath.row].icon)
+                cell.iconImage.contentMode = .scaleAspectFit
             }
         }
         

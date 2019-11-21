@@ -123,6 +123,7 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
             }else{
                 cell.iconImage.backgroundColor = UIColor.white
                 cell.iconImage.image = UIImage(named: filteredData[indexPath.row].icon)
+                cell.iconImage.contentMode = .scaleAspectFit
             }
             
             
@@ -149,6 +150,7 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
             }else{
                 cell.iconImage.backgroundColor = UIColor.white
                 cell.iconImage.image = UIImage(named: contacts[indexPath.row].icon)
+                cell.iconImage.contentMode = .scaleAspectFit
             }
             
             if(contacts[indexPath.row].emergencia){
