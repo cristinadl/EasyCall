@@ -112,6 +112,7 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
                 cell.categoria.text = filteredData[indexPath.row].categoria
                 cell.iconImage.backgroundColor = UIColor.white
                 cell.iconImage.image = UIImage(named: contacts[indexPath.row].icon)
+                cell.iconImage.contentMode = .scaleAspectFit
             }
         }else{
             
@@ -129,6 +130,7 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
                 cell.categoria.text = contacts[indexPath.row].categoria
                 cell.iconImage.backgroundColor = UIColor.white
                 cell.iconImage.image = UIImage(named: contacts[indexPath.row].icon)
+                cell.iconImage.contentMode = .scaleAspectFit
             }
             
         }

@@ -180,6 +180,7 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
                 contact.apellido = cont.apellido
                 contact.categoria = cont.categoria
                 contact.number = cont.number
+                contact.icon = cont.icon
             }
         }
         reloadData()

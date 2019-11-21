@@ -143,11 +143,11 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
         var rem = -1
         var i = 0
         
-//        for cont in contacts{
-//            if(cont.categoria == cat.nombre){
-//                cont.categoria = ""
-//            }
-//        }
+        for cont in contacts{
+            if(cont.categoria == cat.nombre){
+                cont.categoria = ""
+            }
+        }
         for categoria in categorias {
             if(categoria.nombre == cat.nombre){
                 rem = i
