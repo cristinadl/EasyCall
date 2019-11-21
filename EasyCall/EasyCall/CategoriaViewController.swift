@@ -12,6 +12,8 @@ protocol protocoloEliminarCategoria {
     func eliminarCategoria(cat : Categoria) -> Void
 }
 
+var contacts2 = [Contacto]()
+
 class CategoriaViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
     var delegado : protocoloEliminarCategoria!
@@ -32,7 +34,11 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
         return pathArchivo
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        print("entro")
+        obtenerContactos()
+        tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,7 +144,7 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
         }
     }
     
-    
+
     
     /*
      // MARK: - Navigation

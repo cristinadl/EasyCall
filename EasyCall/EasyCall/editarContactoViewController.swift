@@ -111,33 +111,24 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
     }
     
     func eliminar(){
-//        let cat = Categoria(nombre: contacts, icon: "hospital")
-//        let contacto = Contacto(nombre: nombre, apellido: apellido, number: numero, icon: <#T##String#>, emergencia: <#T##Bool#>, categoria: categorias)
-//        delegado.eliminarCategoria(cat: cat)
-//        navigationController?.popViewController(animated: true)
-//        dismiss(animated: true, completion: nil)
-        navigationController?.popViewController(animated: true)
+        var count = 0;
+        for cont in contacts {
+            if(nombre == cont.nombre && apellido == cont.apellido && numero == cont.number){
+                contacts.remove(at: count)
+            }
+            count = count + 1
+        }
+        do {
+            let data = try PropertyListEncoder().encode(contacts)
+            try data.write(to: dataFileUrl(namePlist: "Contactos"))
+        }
+        catch {
+            print("Save Failed")
+        }
+        navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func guardarContactos() {
-//        var contact = Contacto(nombre: "", apellido: "", number: "", icon: "", emergencia: false, categoria:"")
-//        var contactDet = ContactDetails(givenName: "")
-//
-//        if let nombre = tfNombre.text , let apellido = tfApellido.text{
-//            contact.nombre = nombre
-//            contact.apellido = apellido
-//            contact.number = tfNumero.text!
-//        }
-//
-//
-//        contactDet.givenName = tfNombre.text!
-//        contactDet.familyName = tfApellido.text!
-//        contactDet.numbers = ["mobile":contact.number]
-//
-//        self.contacts.append(contact)
-//        self.guardarContactoNuevo()
-//        RZNContacts.addContact(contactDet)
-        var count = 0;
         for cont in contacts {
             if(nombre == cont.nombre && apellido == cont.apellido && numero == cont.number){
                 cont.nombre = tfNombre.text!
@@ -153,7 +144,8 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
         catch {
             print("Save Failed")
         }
-        navigationController?.popViewController(animated: true)
+//       navigationController?.popViewController(animated: true)
+    navigationController?.popToRootViewController(animated: true)
 
     }
     
@@ -205,27 +197,6 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
         
     }
     
-    @IBAction func guardarContactoNuevo() {
-//
-//        var count = 0;
-//        for cont in contacts {
-//            if(nombre == cont.nombre && apellido == cont.apellido && numero == cont.number){
-//                cont.nombre = tfNombre.text!
-//                cont.apellido = tfApellido.text!
-//                cont.number = tfNumero.text!
-//            }
-//        }
-//
-        
-        //        print(contacts.count)
-        do {
-            let data = try PropertyListEncoder().encode(contacts)
-            try data.write(to: dataFileUrl(namePlist: "Contactos"))
-        }
-        catch {
-            print("Save Failed")
-        }
-    }
     /*
      // MARK: - Navigation
      
