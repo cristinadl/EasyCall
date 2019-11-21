@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "E777A815-B670-4F02-8108-06047A0DD07A"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C75FDBB7-6723-41B2-9D42-35B011BF00BE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EasyCall/PopOverViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "PopOverViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "C75FDBB7-6723-41B2-9D42-35B011BF00BE - 91a52942df763322"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EasyCall.PopOverViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; EasyCall.PopOverViewController"
+                  moduleName = "EasyCall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cristinadeleon/Documents/TEC/Materias/iOS/FINAL/EasyCall/EasyCall/EasyCall/PopOverViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "C75FDBB7-6723-41B2-9D42-35B011BF00BE - 2b8371fd459a5df3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EasyCall.PopOverViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; EasyCall.PopOverViewController"
+                  moduleName = "EasyCall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cristinadeleon/Documents/TEC/Materias/iOS/FINAL/EasyCall/EasyCall/EasyCall/PopOverViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "168">
+               </Location>
+               <Location
+                  uuid = "C75FDBB7-6723-41B2-9D42-35B011BF00BE - 1e07883ca87f3ffb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EasyCall.PopOverViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;EasyCall.PopOverViewController&gt;"
+                  moduleName = "EasyCall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cristinadeleon/Documents/TEC/Materias/iOS/FINAL/EasyCall/EasyCall/EasyCall/PopOverViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "C75FDBB7-6723-41B2-9D42-35B011BF00BE - 6870ed1e0ee2e0f8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EasyCall.PopOverViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;EasyCall.PopOverViewController&gt;"
+                  moduleName = "EasyCall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cristinadeleon/Documents/TEC/Materias/iOS/FINAL/EasyCall/EasyCall/EasyCall/PopOverViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "C75FDBB7-6723-41B2-9D42-35B011BF00BE - e34002f9061b703d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EasyCall.PopOverViewController.__deallocating_deinit"
+                  moduleName = "EasyCall"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cristinadeleon/Documents/TEC/Materias/iOS/FINAL/EasyCall/EasyCall/EasyCall/PopOverViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
