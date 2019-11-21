@@ -100,6 +100,47 @@ class agregarCategoriaViewController: UIViewController, UIPopoverPresentationCon
         actualizarDato(img: (sender.imageView?.image)!)
     }
     
+    @IBAction func selectedIconAmigos2(_ sender: UIButton) {
+        imagen = "amigos2"
+        imagesView.isHidden = true
+        actualizarDato(img: (sender.imageView?.image)!)
+    }
+    
+    @IBAction func selectedIconCorazonMedico(_ sender: UIButton) {
+        imagen = "corazonMedico"
+        imagesView.isHidden = true
+        actualizarDato(img: (sender.imageView?.image)!)
+    }
+    
+    @IBAction func selectedIconServiciosSalud(_ sender: UIButton) {
+        imagen = "serviciosSalud"
+        imagesView.isHidden = true
+        actualizarDato(img: (sender.imageView?.image)!)
+    }
+    
+    @IBAction func selectedIconServiciosHogar(_ sender: UIButton) {
+        imagen = "serviciosHogar"
+        imagesView.isHidden = true
+        actualizarDato(img: (sender.imageView?.image)!)
+    }
+    
+    @IBAction func selectedIconHogar(_ sender: UIButton) {
+        imagen = "hogar"
+        imagesView.isHidden = true
+        actualizarDato(img: (sender.imageView?.image)!)
+    }
+    
+    @IBAction func selectedIconAlerta(_ sender: UIButton) {
+        imagen = "alerta"
+        imagesView.isHidden = true
+        actualizarDato(img: (sender.imageView?.image)!)
+    }
+    
+    
+    
+    
+    
+    
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                let vistaPopOver = segue.destination as! PopOverViewController
