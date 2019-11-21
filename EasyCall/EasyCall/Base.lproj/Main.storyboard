@@ -283,7 +283,7 @@ de tu categoria</string>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qm6-nM-71n">
                                         <rect key="frame" x="-1" y="19" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="amigosMuchos"/>
+                                        <state key="normal" title="Button" image="amigos"/>
                                         <connections>
                                             <action selector="selectedIconAmigos:" destination="RsV-mr-mC0" eventType="touchUpInside" id="1io-TG-AIZ"/>
                                         </connections>
@@ -291,7 +291,7 @@ de tu categoria</string>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7YH-XY-LQu">
                                         <rect key="frame" x="73" y="19" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="hospitalGrande"/>
+                                        <state key="normal" title="Button" image="hospital"/>
                                         <connections>
                                             <action selector="selectedIconHospital:" destination="RsV-mr-mC0" eventType="touchUpInside" id="eEZ-3m-Vzg"/>
                                         </connections>
@@ -299,7 +299,7 @@ de tu categoria</string>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1Y-gA-5OI">
                                         <rect key="frame" x="-1" y="97" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="amigosDelCafe"/>
+                                        <state key="normal" title="Button" image="cafe"/>
                                         <connections>
                                             <action selector="selectedIconCafe:" destination="RsV-mr-mC0" eventType="touchUpInside" id="7ze-La-upH"/>
                                         </connections>
@@ -315,7 +315,7 @@ de tu categoria</string>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1x-6F-0mz">
                                         <rect key="frame" x="229" y="19" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="serviciosVarios"/>
+                                        <state key="normal" title="Button" image="servicios"/>
                                         <connections>
                                             <action selector="selectedIconTrabajo:" destination="RsV-mr-mC0" eventType="touchUpInside" id="qGP-OX-Xyd"/>
                                         </connections>
@@ -331,7 +331,7 @@ de tu categoria</string>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCK-z1-UjI">
                                         <rect key="frame" x="229" y="97" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="family"/>
+                                        <state key="normal" image="contactos"/>
                                         <connections>
                                             <action selector="selectedIconCorazonMedico:" destination="RsV-mr-mC0" eventType="touchUpInside" id="b7o-ru-tn0"/>
                                         </connections>
@@ -339,7 +339,7 @@ de tu categoria</string>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFO-0e-N5n">
                                         <rect key="frame" x="-1" y="172" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="mandados"/>
+                                        <state key="normal" image="mercado"/>
                                         <connections>
                                             <action selector="selectedIconServiciosSalud:" destination="RsV-mr-mC0" eventType="touchUpInside" id="EV9-QW-a7o"/>
                                         </connections>
@@ -371,7 +371,7 @@ de tu categoria</string>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eI2-dX-tMw">
                                         <rect key="frame" x="147" y="19" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="contactos"/>
+                                        <state key="normal" title="Button" image="banco"/>
                                         <connections>
                                             <action selector="selectedIconEmergencia:" destination="RsV-mr-mC0" eventType="touchUpInside" id="fag-L8-3Fa"/>
                                         </connections>
@@ -1153,25 +1153,21 @@ de tu categoria</string>
     </scenes>
     <resources>
         <image name="addCategoria" width="876" height="178"/>
-        <image name="amigos" width="64" height="64"/>
-        <image name="amigosDelCafe" width="1537" height="1537"/>
-        <image name="amigosMuchos" width="2133" height="2133"/>
-        <image name="cafe" width="100" height="100"/>
-        <image name="casa" width="1600" height="1600"/>
-        <image name="comida" width="1537" height="1537"/>
+        <image name="amigos" width="683" height="683"/>
+        <image name="banco" width="512" height="512"/>
+        <image name="cafe" width="492" height="492"/>
+        <image name="casa" width="512" height="512"/>
+        <image name="comida" width="492" height="492"/>
         <image name="contactos" width="1600" height="1600"/>
-        <image name="doctor" width="1537" height="1537"/>
+        <image name="doctor" width="492" height="492"/>
         <image name="emergencia" width="48" height="48"/>
         <image name="emergenciaIcon" width="889" height="203"/>
-        <image name="emergencias" width="1537" height="1537"/>
-        <image name="family" width="2133" height="2133"/>
-        <image name="hospital" width="64" height="64"/>
-        <image name="hospitalGrande" width="1536" height="1536"/>
-        <image name="mandados" width="1600" height="1600"/>
+        <image name="emergencias" width="492" height="492"/>
+        <image name="hospital" width="492" height="492"/>
         <image name="menu" width="882" height="188"/>
-        <image name="people" width="1708" height="1708"/>
-        <image name="servicios" width="128" height="128"/>
-        <image name="serviciosVarios" width="2133" height="2133"/>
+        <image name="mercado" width="512" height="512"/>
+        <image name="people" width="410" height="410"/>
+        <image name="servicios" width="512" height="512"/>
         <image name="trabajo" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
