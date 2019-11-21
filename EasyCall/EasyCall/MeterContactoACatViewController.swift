@@ -139,7 +139,7 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
+        return 150
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

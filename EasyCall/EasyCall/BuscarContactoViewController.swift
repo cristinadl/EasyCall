@@ -143,7 +143,7 @@ class BuscarContactoViewController: UIViewController, UISearchBarDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
+        return 150
     }
     
 }

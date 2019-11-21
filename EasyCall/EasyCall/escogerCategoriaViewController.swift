@@ -57,7 +57,7 @@ class escogerCategoriaViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 151
+        return 170
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -42,6 +42,8 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
         obtenerContactos()
         
         searchBar.delegate = self
+        title = "Asignar Contactos de Emergencia"
+        searchBar.placeholder = "Escribe aqui al Contacto que buscas"
         searchBar.returnKeyType = UIReturnKeyType.done
     }
     
@@ -160,7 +162,7 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
+        return 150
     }
     
 }
