@@ -394,80 +394,6 @@ de tu categoria</string>
             </objects>
             <point key="canvasLocation" x="45" y="176.40845070422534"/>
         </scene>
-        <!--Pop Over View Controller-->
-        <scene sceneID="oNA-3N-lpb">
-            <objects>
-                <viewController id="0C5-HH-IZk" customClass="PopOverViewController" customModule="EasyCall" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7MW-FG-G3J">
-                        <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyd-gI-EOY">
-                                <rect key="frame" x="8" y="27" width="73" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="amigos"/>
-                                <connections>
-                                    <action selector="actionAmigos:" destination="0C5-HH-IZk" eventType="touchUpInside" id="d4O-IW-2vn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aID-Rv-VRK">
-                                <rect key="frame" x="93" y="27" width="65" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="hospital"/>
-                                <connections>
-                                    <action selector="actionHospital:" destination="0C5-HH-IZk" eventType="touchUpInside" id="TDQ-2x-hNg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5HD-Fh-97Y">
-                                <rect key="frame" x="8" y="94" width="73" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="cafe"/>
-                                <connections>
-                                    <action selector="actionCafe:" destination="0C5-HH-IZk" eventType="touchUpInside" id="BGX-j3-b9d"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiN-wN-mcM">
-                                <rect key="frame" x="83" y="98" width="75" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="servicios"/>
-                                <connections>
-                                    <action selector="actionServicios:" destination="0C5-HH-IZk" eventType="touchUpInside" id="tR5-he-8E7"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSR-Fr-5bV">
-                                <rect key="frame" x="174" y="94" width="60" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="trabajo"/>
-                                <connections>
-                                    <action selector="actionTrabajo:" destination="0C5-HH-IZk" eventType="touchUpInside" id="uSy-Dk-PBu"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7k-Ux-lYO">
-                                <rect key="frame" x="178" y="35" width="52" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="emergencia"/>
-                                <connections>
-                                    <action selector="actionEmergencia:" destination="0C5-HH-IZk" eventType="touchUpInside" id="35P-fu-ihA"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Kfc-dy-duN"/>
-                    </view>
-                    <size key="freeformSize" width="250" height="250"/>
-                    <connections>
-                        <outlet property="btAmigos" destination="wyd-gI-EOY" id="SJP-El-bvQ"/>
-                        <outlet property="btCafe" destination="5HD-Fh-97Y" id="dQP-D4-cls"/>
-                        <outlet property="btEmergencia" destination="S7k-Ux-lYO" id="caJ-Es-RyY"/>
-                        <outlet property="btHospital" destination="aID-Rv-VRK" id="voW-XQ-RgZ"/>
-                        <outlet property="btServicios" destination="iiN-wN-mcM" id="OAp-Ve-5cT"/>
-                        <outlet property="btTrabajo" destination="LSR-Fr-5bV" id="IsL-w3-b6x"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DdY-7e-y3P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="847.5" y="184.85915492957747"/>
-        </scene>
         <!--Llamar Emergencia View Controller-->
         <scene sceneID="uco-da-aiq">
             <objects>
@@ -1165,14 +1091,8 @@ de tu categoria</string>
         <image name="8" width="1600" height="1600"/>
         <image name="9" width="512" height="512"/>
         <image name="addCategoria" width="876" height="178"/>
-        <image name="amigos" width="683" height="683"/>
-        <image name="cafe" width="492" height="492"/>
-        <image name="emergencia" width="48" height="48"/>
         <image name="emergenciaIcon" width="889" height="203"/>
-        <image name="hospital" width="492" height="492"/>
         <image name="menu" width="882" height="188"/>
-        <image name="servicios" width="512" height="512"/>
-        <image name="trabajo" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="wqJ-xv-Yke"/>
