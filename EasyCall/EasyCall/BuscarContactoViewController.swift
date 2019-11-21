@@ -42,7 +42,7 @@ class BuscarContactoViewController: UIViewController, UISearchBarDelegate, UITab
         title = "Buscar Contacto"
         
         searchBar.delegate = self
-        searchBar.placeholder = "Escribe aqui al Contacto que buscas"
+        searchBar.placeholder = "Escribe aquí el contacto que buscas"
 //        searchBar.text = "Buscas algun contacto"
         
         
