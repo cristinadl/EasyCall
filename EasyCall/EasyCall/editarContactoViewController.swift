@@ -62,6 +62,7 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
         super.viewDidLoad()
         obtenerContactos()
         obtenerCategorias()
+        
         self.picker.delegate = self
         self.picker.dataSource = self
         //pickerData = String[Categoria(nombre: "amigos", icon: "amigos")]
@@ -118,6 +119,21 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
 //        for cat in categorias {
 //            print (cat.nombre, cat.icon)
 //        }
+        
+        var row = 0
+        var count = 0
+        
+        for cat in categorias {
+            if(cat.nombre == categoria){
+                row = count
+                print("row = \(row)")
+            }else{
+                count = count + 1
+            }
+        }
+        
+        
+        picker.selectRow(row, inComponent: 0, animated: true)
     }
     
     @IBAction func obtenerContactos() {

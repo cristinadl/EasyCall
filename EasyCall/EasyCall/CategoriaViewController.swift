@@ -25,7 +25,6 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
     var nombre: String?
     var apellido: String?
     var numero: String?
-    var categoria: String?
     
     func dataFileUrl(namePlist: String) -> URL {
         let url = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -132,6 +131,7 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
             vc.nombre = nombre!
             vc.apellido = apellido!
             vc.numero = numero!
+            vc.categoria = nombreCat
             
         }
     }
@@ -154,7 +154,6 @@ extension CategoriaViewController: pasarInformacion {
         nombre = cell.name.text!
         apellido = "apellido"
         numero = cell.numeroCelular.text!
-//        categoria = cell.categoria
         
         //        self.performSegue(withIdentifier: "editarContactoSegue", sender: self)
         print("segue entrado")
