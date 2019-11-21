@@ -145,7 +145,7 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
         
         for cont in contacts{
             if(cont.categoria == cat.nombre){
-                cont.categoria = ""
+                cont.categoria = "Sin Categoria"
             }
         }
         for categoria in categorias {
@@ -157,7 +157,7 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
         
         for cont in contactosEmergencia {
             if(cont.categoria == cat.nombre){
-                cont.categoria = ""
+                cont.categoria = "Sin Categoria"
             }
         }
         
