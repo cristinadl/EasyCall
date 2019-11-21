@@ -542,7 +542,11 @@ de tu categoria</string>
                         <viewLayoutGuide key="safeArea" id="KYB-hj-9J5"/>
                     </view>
                     <navigationItem key="navigationItem" id="ePZ-uB-HsQ">
-                        <barButtonItem key="rightBarButtonItem" title="Editar" id="Uxd-Vo-F3b"/>
+                        <barButtonItem key="rightBarButtonItem" title="Editar" id="Uxd-Vo-F3b">
+                            <connections>
+                                <segue destination="LF0-pF-Uhk" kind="show" id="wqJ-xv-Yke"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Uuo-wA-xhN" id="lgs-FD-zQe"/>
@@ -1166,4 +1170,7 @@ de tu categoria</string>
         <image name="serviciosSalud" width="225" height="225"/>
         <image name="trabajo" width="200" height="200"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="wqJ-xv-Yke"/>
+    </inferredMetricsTieBreakers>
 </document>

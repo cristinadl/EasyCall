@@ -86,7 +86,7 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "editarContactoSegue"){
-            
+//            let vc = editarContactoViewController
         }
     }
     
