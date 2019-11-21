@@ -48,7 +48,7 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
     
     var contacts = [Contacto]()
     var categorias = [Categoria]()
-    //var pickerData: [[String]] = [[String]]()
+//    var pickerData: [[String]] = [[String]]()
     var pickerData = [Categoria(nombre: "amigos", icon: "amigos")]
     
     func dataFileUrl(namePlist: String) -> URL {
@@ -61,9 +61,9 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
     override func viewDidLoad() {
         super.viewDidLoad()
         obtenerContactos()
-        //        obtenerCategorias()
-        //        self.picker.delegate = self
-        //        self.picker.dataSource = self
+        obtenerCategorias()
+        self.picker.delegate = self
+        self.picker.dataSource = self
         //pickerData = String[Categoria(nombre: "amigos", icon: "amigos")]
         self.hideKeyboard()
         
@@ -77,6 +77,7 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
     var nombre = ""
     var apellido = ""
     var numero = ""
+    var categoria = ""
     
     @IBOutlet weak var tfNombre: UITextField!
     @IBOutlet weak var tfApellido: UITextField!
@@ -114,9 +115,9 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
             print("Error reading or decoding file")
         }
         
-        for cat in categorias {
-            print (cat.nombre, cat.icon)
-        }
+//        for cat in categorias {
+//            print (cat.nombre, cat.icon)
+//        }
     }
     
     @IBAction func obtenerContactos() {
