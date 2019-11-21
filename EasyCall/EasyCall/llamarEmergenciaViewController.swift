@@ -11,7 +11,7 @@ import CoreData
 import Contacts
 
 class llamarEmergenciaViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-        
+    
     var emergencia = 0
     
     @IBOutlet weak var tableView: UITableView!
@@ -26,8 +26,8 @@ class llamarEmergenciaViewController: UIViewController, UITableViewDataSource, U
     
     override func viewWillAppear(_ animated: Bool) {
         print("regresando a la pantalla")
-                print("no. emergencia = \(contactosEmergencia.count)")
-                tableView.reloadData()
+        print("no. emergencia = \(contactosEmergencia.count)")
+        tableView.reloadData()
     }
     
     
@@ -61,14 +61,16 @@ class llamarEmergenciaViewController: UIViewController, UITableViewDataSource, U
         cell.numeroLabel.text = contactosEmergencia[indexPath.row].number
         
         
-        if(contactosEmergencia[indexPath.row].icon == ""){
-            cell.iconImage.backgroundColor = UIColor.init(red:0/255, green: 191/255, blue: 214/255, alpha: 1)
+        if(contactosEmergencia[indexPath.row].categoria == "Sin Categoria" || contactosEmergencia[indexPath.row].icon == ""){
+            cell.iconImage.image = UIImage()
+            cell.iconImage.backgroundColor = UIColor.groupTableViewBackground
+            cell.iconImage.layer.cornerRadius = cell.iconImage.frame.width / 2
             
         }else{
+            cell.iconImage.backgroundColor = UIColor.white
             cell.iconImage.image = UIImage(named: contactosEmergencia[indexPath.row].icon)
         }
         
-        cell.iconImage.layer.cornerRadius = cell.iconImage.frame.width / 2
         
         
         return cell

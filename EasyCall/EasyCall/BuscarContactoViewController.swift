@@ -11,7 +11,7 @@ import CoreData
 import Contacts
 
 class BuscarContactoViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate  {
-
+    
     var contacts = [Contacto]()
     var filteredData = [Contacto]()
     var isSearching = false
@@ -32,18 +32,18 @@ class BuscarContactoViewController: UIViewController, UISearchBarDelegate, UITab
         return pathArchivo
     }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.hideKeyboard()
         obtenerContactos()
         
         title = "Buscar Contacto"
         
         searchBar.delegate = self
-        searchBar.placeholder = "Escribe aquí el contacto que buscas"
-//        searchBar.text = "Buscas algun contacto"
+        searchBar.placeholder = "Escribe aqui al Contacto que buscas"
+        //        searchBar.text = "Buscas algun contacto"
         
         
         searchBar.returnKeyType = UIReturnKeyType.done
@@ -111,10 +111,13 @@ class BuscarContactoViewController: UIViewController, UISearchBarDelegate, UITab
             
             cell.numeroLabel.text = filteredData[indexPath.row].number
             
-            if(filteredData[indexPath.row].icon == ""){
-                cell.iconImage.backgroundColor = UIColor.init(red:0/255, green: 191/255, blue: 214/255, alpha: 1)
+            
+            if(filteredData[indexPath.row].categoria == "Sin Categoria" || filteredData[indexPath.row].icon == ""){
+                cell.iconImage.image = UIImage()
+                cell.iconImage.backgroundColor = UIColor.groupTableViewBackground
+                cell.iconImage.layer.cornerRadius = cell.iconImage.frame.width / 2
             }else{
-                //                print(contacts[indexPath.section][indexPath.row])
+                cell.iconImage.backgroundColor = UIColor.white
                 cell.iconImage.image = UIImage(named: filteredData[indexPath.row].icon)
             }
         }else{
@@ -131,9 +134,12 @@ class BuscarContactoViewController: UIViewController, UISearchBarDelegate, UITab
             
             cell.numeroLabel.text = contacts[indexPath.row].number
             
-            if(contacts[indexPath.row].icon == ""){
-                cell.iconImage.backgroundColor = UIColor.init(red:0/255, green: 191/255, blue: 214/255, alpha: 1)
+            if(contacts[indexPath.row].categoria == "Sin Categoria" || contacts[indexPath.row].icon == ""){
+                cell.iconImage.image = UIImage()
+                cell.iconImage.backgroundColor = UIColor.groupTableViewBackground
+                cell.iconImage.layer.cornerRadius = cell.iconImage.frame.width / 2
             }else{
+                cell.iconImage.backgroundColor = UIColor.white
                 cell.iconImage.image = UIImage(named: contacts[indexPath.row].icon)
             }
         }

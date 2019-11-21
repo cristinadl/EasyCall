@@ -43,7 +43,7 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
         
         searchBar.delegate = self
         title = "Asignar Contactos de Emergencia"
-        searchBar.placeholder = "Escribe aquí al contacto que buscas"
+        searchBar.placeholder = "Escribe aqui al Contacto que buscas"
         searchBar.returnKeyType = UIReturnKeyType.done
     }
     
@@ -116,10 +116,12 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
             
             cell.numeroLabel.text = filteredData[indexPath.row].number
             
-            if(filteredData[indexPath.row].icon == ""){
-                cell.iconImage.backgroundColor = UIColor.init(red:0/255, green: 191/255, blue: 214/255, alpha: 1)
+            if(contacts[indexPath.row].categoria == "Sin Categoria" || contacts[indexPath.row].icon == ""){
+                cell.iconImage.image = UIImage()
+                cell.iconImage.backgroundColor = UIColor.groupTableViewBackground
+                cell.iconImage.layer.cornerRadius = cell.iconImage.frame.width / 2
             }else{
-                //                print(contacts[indexPath.section][indexPath.row])
+                cell.iconImage.backgroundColor = UIColor.white
                 cell.iconImage.image = UIImage(named: filteredData[indexPath.row].icon)
             }
             
@@ -140,9 +142,10 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
             
             cell.numeroLabel.text = contacts[indexPath.row].number
             
-            if(contacts[indexPath.row].icon == ""){
+            if(contacts[indexPath.row].categoria == "Sin Categoria" || contacts[indexPath.row].icon == ""){
+                cell.iconImage.image = UIImage()
                 cell.iconImage.backgroundColor = UIColor.groupTableViewBackground
-                cell.iconImage.layer.cornerRadius = cell.iconImage.frame.height / 2
+                cell.iconImage.layer.cornerRadius = cell.iconImage.frame.width / 2
             }else{
                 cell.iconImage.backgroundColor = UIColor.white
                 cell.iconImage.image = UIImage(named: contacts[indexPath.row].icon)

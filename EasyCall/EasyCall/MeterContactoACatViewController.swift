@@ -37,8 +37,8 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
         
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
-        title = "Meter contacto a Categoría"
-        searchBar.placeholder = "Escribe aquí al contacto que buscas"
+        title = "Meter Contacto a Categoria"
+        searchBar.placeholder = "Escribe aqui al Contacto que buscas"
     }
     
     @IBAction func guardarContactos() {
@@ -102,10 +102,11 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
             cell.name.text = filteredData[indexPath.row].getNombreCompleto()
             if(filteredData[indexPath.row].categoria == ""){
                 cell.asignarCategoria.titleLabel?.text = "Asignar"
-                cell.categoria.text = "Sin categoría"
+                cell.categoria.text = "Sin categoria"
                 cell.iconImage.backgroundColor = UIColor.groupTableViewBackground
+                cell.iconImage.image = UIImage()
                 cell.iconImage.layer.cornerRadius = cell.iconImage.frame.height / 2
-
+                
             }else{
                 cell.asignarCategoria.titleLabel?.text = "Cambiar"
                 cell.categoria.text = filteredData[indexPath.row].categoria
@@ -119,8 +120,9 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
             cell.name.text = contacts[indexPath.row].getNombreCompleto()
             if(contacts[indexPath.row].categoria == ""){
                 cell.asignarCategoria.titleLabel?.text = "Asignar"
-                cell.categoria.text = "Sin categoría"
+                cell.categoria.text = "Sin categoria"
                 cell.iconImage.backgroundColor = UIColor.groupTableViewBackground
+                cell.iconImage.image = UIImage()
                 cell.iconImage.layer.cornerRadius = cell.iconImage.frame.height / 2
             }else{
                 cell.asignarCategoria.titleLabel?.text = "Cambiar"
@@ -157,5 +159,5 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
     
     
     
-
+    
 }
