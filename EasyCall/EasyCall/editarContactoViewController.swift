@@ -43,6 +43,7 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
         return 100
     }
     
+    
     @IBOutlet weak var picker: UIPickerView!
     
     var contacts = [Contacto]()
@@ -56,17 +57,26 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
         return pathArchivo
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         obtenerContactos()
-        obtenerCategorias()
-        self.picker.delegate = self
-        self.picker.dataSource = self
+        //        obtenerCategorias()
+        //        self.picker.delegate = self
+        //        self.picker.dataSource = self
         //pickerData = String[Categoria(nombre: "amigos", icon: "amigos")]
         self.hideKeyboard()
         
+        tfNombre.text = nombre
+        tfApellido.text = apellido
+        tfNumero.text = numero
+        
         // Do any additional setup after loading the view.
     }
+    
+    var nombre = ""
+    var apellido = ""
+    var numero = ""
     
     @IBOutlet weak var tfNombre: UITextField!
     @IBOutlet weak var tfApellido: UITextField!

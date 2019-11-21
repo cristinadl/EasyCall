@@ -8,22 +8,30 @@
 
 import UIKit
 
-class categoriaCellTableViewCell: UITableViewCell {
+protocol pasarInformacion {
+    func pasandoInfo(from cell: categoriaCellTableViewCell)
+}
 
+class categoriaCellTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var numeroCelular: UILabel!
     @IBOutlet weak var llamarContacto: UIButton!
     @IBOutlet weak var editarContacto: UIButton!
     
+    var delegado : pasarInformacion!
+    
+    var onButtonTapped: (() -> Void)? = nil
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -34,14 +42,14 @@ class categoriaCellTableViewCell: UITableViewCell {
     }
     
     @IBAction func llamandoAContacto(_ sender: Any) {
-         callContact(number: (numeroCelular.text?.digits)!)
-//        print("llamando a \(name.text) con numero: \(numeroCelular.text)")
-    }
-    
-    @IBAction func editandoAContacto(_ sender: Any) {
-            print("editando a \(name.text)")
+        callContact(number: (numeroCelular.text?.digits)!)
         //        print("llamando a \(name.text) con numero: \(numeroCelular.text)")
     }
     
-
+    @IBAction func editandoAContacto(_ sender: UIButton) {
+        print("passing data")
+        self.delegado?.pasandoInfo(from: self)
+    }
+    
+    
 }
