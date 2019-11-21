@@ -10,13 +10,15 @@ import UIKit
 import CoreData
 import Contacts
 
-class misCategoriasViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, protocoloAgregarCategoria, protocoloEliminarCategoria {
+class misCategoriasViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, protocoloAgregarCategoria, protocoloEliminarCategoria, UIPopoverPresentationControllerDelegate {
     var contacts = [Contacto]()
     var filteredData = [Contacto]()
     var isSearching = false
     var contactStore = CNContactStore()
     
     var usuarioNuevo = true
+    
+   
     
     
     var categorias = [Categoria]()
@@ -101,8 +103,17 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
             let indice = tableView.indexPathForSelectedRow!
             viewCategoria.nombreCat = categorias[indice.row].nombre
         }
+        
                 
     }
+    
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//                let vistaPopOver = segue.destination as! PopOverCreditosViewController
+//            vistaPopOver.popoverPresentationController!.delegate = self
+//            //vistaPopOver.dato = lbMensaje.text
+//            
+//        }
     
     @IBAction func contactoEmergenciaClick(_ sender: UIButton) {
         obtenerContactos()
