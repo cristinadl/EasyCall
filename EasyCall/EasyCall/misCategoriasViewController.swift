@@ -155,6 +155,11 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
             i += 1
         }
         
+        for cont in contactosEmergencia {
+            if(cont.categoria == cat.nombre){
+                cont.categoria = ""
+            }
+        }
         
         guardarContactos()
         if(rem >= 0){
