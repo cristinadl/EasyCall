@@ -86,23 +86,40 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
     
     
     @IBAction func guardarContactos() {
-        var contact = Contacto(nombre: "", apellido: "", number: "", icon: "", emergencia: false, categoria:"")
-        var contactDet = ContactDetails(givenName: "")
-        
-        if let nombre = tfNombre.text , let apellido = tfApellido.text{
-            contact.nombre = nombre
-            contact.apellido = apellido
-            contact.number = tfNumero.text!
+//        var contact = Contacto(nombre: "", apellido: "", number: "", icon: "", emergencia: false, categoria:"")
+//        var contactDet = ContactDetails(givenName: "")
+//
+//        if let nombre = tfNombre.text , let apellido = tfApellido.text{
+//            contact.nombre = nombre
+//            contact.apellido = apellido
+//            contact.number = tfNumero.text!
+//        }
+//
+//
+//        contactDet.givenName = tfNombre.text!
+//        contactDet.familyName = tfApellido.text!
+//        contactDet.numbers = ["mobile":contact.number]
+//
+//        self.contacts.append(contact)
+//        self.guardarContactoNuevo()
+//        RZNContacts.addContact(contactDet)
+        var count = 0;
+        for cont in contacts {
+            if(nombre == cont.nombre && apellido == cont.apellido && numero == cont.number){
+                cont.nombre = tfNombre.text!
+                cont.apellido = tfApellido.text!
+                cont.number = tfNumero.text!
+            }
         }
         
+        do {
+            let data = try PropertyListEncoder().encode(contacts)
+            try data.write(to: dataFileUrl(namePlist: "Contactos"))
+        }
+        catch {
+            print("Save Failed")
+        }
         
-        contactDet.givenName = tfNombre.text!
-        contactDet.familyName = tfApellido.text!
-        contactDet.numbers = ["mobile":contact.number]
-        
-        self.contacts.append(contact)
-        self.guardarContactoNuevo()
-        RZNContacts.addContact(contactDet)
     }
     
     @IBAction func obtenerCategorias() {
@@ -154,6 +171,16 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
     }
     
     @IBAction func guardarContactoNuevo() {
+//
+//        var count = 0;
+//        for cont in contacts {
+//            if(nombre == cont.nombre && apellido == cont.apellido && numero == cont.number){
+//                cont.nombre = tfNombre.text!
+//                cont.apellido = tfApellido.text!
+//                cont.number = tfNumero.text!
+//            }
+//        }
+//
         
         //        print(contacts.count)
         do {

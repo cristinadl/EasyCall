@@ -113,7 +113,7 @@ class BuscarContactoViewController: UIViewController, UISearchBarDelegate, UITab
             }
         }else{
             
-            let name = contacts[indexPath.row].nombre
+            let name = contacts[indexPath.row].getNombreCompleto()
             
             if(contacts[indexPath.row].emergencia){
                 print("\(contacts[indexPath.row].getNombreCompleto()) es emergencia")
