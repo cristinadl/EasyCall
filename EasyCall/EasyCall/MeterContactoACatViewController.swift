@@ -37,6 +37,8 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
         
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
+        title = "Meter Contacto a Categoria"
+        searchBar.placeholder = "Escribe aqui al Contacto que buscas"
     }
     
     @IBAction func guardarContactos() {

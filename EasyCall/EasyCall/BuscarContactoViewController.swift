@@ -39,7 +39,13 @@ class BuscarContactoViewController: UIViewController, UISearchBarDelegate, UITab
         self.hideKeyboard()
         obtenerContactos()
         
+        title = "Buscar Contacto"
+        
         searchBar.delegate = self
+        searchBar.placeholder = "Escribe aqui al Contacto que buscas"
+//        searchBar.text = "Buscas algun contacto"
+        
+        
         searchBar.returnKeyType = UIReturnKeyType.done
     }
     
