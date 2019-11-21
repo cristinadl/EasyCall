@@ -138,6 +138,14 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
                 contacto.nombre = tfNombre.text!
                 contacto.apellido = tfApellido.text!
                 contacto.number = tfNumero.text!
+                contacto.categoria = categorias[picker.selectedRow(inComponent: 0)].nombre
+                
+                for cat in categorias {
+                    if(cat.nombre == contacto.categoria){
+                        contacto.icon = cat.icon
+                    }
+                }
+                
                 delegado.actualizarDato(contOriginal: cont, cont: contacto)
             }
         }
