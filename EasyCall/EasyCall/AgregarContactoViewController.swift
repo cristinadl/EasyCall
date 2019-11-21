@@ -84,7 +84,12 @@ class AgregarContactoViewController: UIViewController,UIPickerViewDelegate, UIPi
             contact.apellido = apellido
             contact.number = tfNumero.text!
             contact.categoria = categorias[picker.selectedRow(inComponent: 0)].nombre
-            contact.icon = categorias[picker.selectedRow(inComponent: 0)].icon
+            
+            for cat in categorias {
+                if(cat.nombre == contact.categoria){
+                    contact.icon = cat.icon
+                }
+            }
         }
         
         
