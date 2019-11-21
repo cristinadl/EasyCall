@@ -16,11 +16,11 @@ class AgregarContactoViewController: UIViewController,UIPickerViewDelegate, UIPi
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return categorias.count
     }
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//
-//        return categorias[row].nombre
-//
-//    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+
+        return categorias[row].nombre
+
+    }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var view = UIView()
@@ -63,7 +63,7 @@ class AgregarContactoViewController: UIViewController,UIPickerViewDelegate, UIPi
         self.picker.delegate = self
         self.picker.dataSource = self
        //pickerData = String[Categoria(nombre: "amigos", icon: "amigos")]
-        
+        self.hideKeyboard()
         
         // Do any additional setup after loading the view.
     }
@@ -74,27 +74,22 @@ class AgregarContactoViewController: UIViewController,UIPickerViewDelegate, UIPi
     
     
     @IBAction func guardarContactos() {
-        var contact: Contacto!
-        var contactDet : ContactDetails!
+        var contact = Contacto(nombre: "", number: "", icon: "", emergencia: false, categoria:"")
+        var contactDet = ContactDetails(givenName: "")
         
-        contact.nombre = tfNombre.text! + " " + tfApellido.text!
-        contact.number = tfNumero.text!
+        if let nombre = tfNombre.text , let apellido = tfApellido.text{
+            contact.nombre = nombre + " " + apellido
+            contact.number = tfNumero.text!
+        }
+        
         
         contactDet.givenName = tfNombre.text!
         contactDet.familyName = tfApellido.text!
         contactDet.numbers = ["mobile":contact.number]
         
-        
-        print(contacts.count)
-        do {
-            let data = try PropertyListEncoder().encode(contacts)
-            try data.write(to: dataFileUrl(namePlist: "Contactos"))
-        }
-        catch {
-            print("Save Failed")
-        }
-        
-          RZNContacts.addContact(contactDet)
+        self.contacts.append(contact)
+        self.guardarContactoNuevo()
+        RZNContacts.addContact(contactDet)
     }
     
     @IBAction func obtenerCategorias() {
@@ -130,6 +125,17 @@ class AgregarContactoViewController: UIViewController,UIPickerViewDelegate, UIPi
         
     }
 
+    @IBAction func guardarContactoNuevo() {
+            
+    //        print(contacts.count)
+            do {
+                let data = try PropertyListEncoder().encode(contacts)
+                try data.write(to: dataFileUrl(namePlist: "Contactos"))
+            }
+            catch {
+                print("Save Failed")
+            }
+        }
     /*
     // MARK: - Navigation
 
