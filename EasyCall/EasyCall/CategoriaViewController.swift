@@ -81,6 +81,8 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
         cell.name.text = filteredContacts[indexPath.row].getNombreCompleto()
         cell.numeroCelular.text = filteredContacts[indexPath.row].number
         cell.iconImage.image = UIImage(named: filteredContacts[indexPath.row].icon)
+        cell.apellido = filteredContacts[indexPath.row].apellido
+        cell.nombre = filteredContacts[indexPath.row].nombre
         cell.delegado = self
         
         return cell
@@ -151,8 +153,8 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
 }
 extension CategoriaViewController: pasarInformacion {
     func pasandoInfo(from cell: categoriaCellTableViewCell) {
-        nombre = cell.name.text!
-        apellido = "apellido"
+        nombre = cell.nombre!
+        apellido = cell.apellido!
         numero = cell.numeroCelular.text!
         
         //        self.performSegue(withIdentifier: "editarContactoSegue", sender: self)
