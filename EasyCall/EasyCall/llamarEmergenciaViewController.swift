@@ -16,11 +16,13 @@ class llamarEmergenciaViewController: UIViewController, UITableViewDataSource, U
     
     @IBOutlet weak var tableView: UITableView!
     
-    
+    var contacts = [Contacto]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Contactos Emergencia"
+        obtenerContactos()
+        getContactoEmergencia()
         self.hideKeyboard()
     }
     
@@ -30,13 +32,48 @@ class llamarEmergenciaViewController: UIViewController, UITableViewDataSource, U
         tableView.reloadData()
     }
     
-    
-    
     func dataFileUrl(namePlist: String) -> URL {
         let url = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
         let pathArchivo = url.appendingPathComponent(namePlist + ".plist")
         return pathArchivo
     }
+    
+    @IBAction func guardarContactos() {
+        
+        print(contacts.count)
+        do {
+            let data = try PropertyListEncoder().encode(contacts)
+            try data.write(to: dataFileUrl(namePlist: "Contactos"))
+        }
+        catch {
+            print("Save Failed")
+        }
+    }
+    
+    @IBAction func obtenerContactos() {
+        // borro la lista para verificar que sí se obtengan
+        contacts.removeAll()
+        
+        do {
+            let data = try Data.init(contentsOf: dataFileUrl(namePlist: "Contactos"))
+            contacts = try PropertyListDecoder().decode([Contacto].self, from: data)
+        }
+        catch {
+            print("Error reading or decoding file")
+        }
+        
+        guardarContactos()
+        
+    }
+    
+    func getContactoEmergencia(){
+        for cont in contacts{
+            if (cont.emergencia){
+                contactosEmergencia.append(cont)
+            }
+        }
+    }
+    
     
     @IBAction func editarPressed(_ sender: Any) {
         performSegue(withIdentifier: "ContactoEmergencia", sender: nil)
