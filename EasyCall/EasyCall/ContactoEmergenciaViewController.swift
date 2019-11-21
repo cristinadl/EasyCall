@@ -116,7 +116,7 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
             
             cell.numeroLabel.text = filteredData[indexPath.row].number
             
-            if(contacts[indexPath.row].categoria == "Sin Categoria" || contacts[indexPath.row].icon == ""){
+            if(filteredData[indexPath.row].categoria == "Sin Categoria" || filteredData[indexPath.row].icon == ""){
                 cell.iconImage.image = UIImage()
                 cell.iconImage.backgroundColor = UIColor.groupTableViewBackground
                 cell.iconImage.layer.cornerRadius = cell.iconImage.frame.width / 2
@@ -128,11 +128,13 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
             
             
             if(filteredData[indexPath.row].emergencia){
-                cell.emergenciaButton.backgroundColor = UIColor(red: 51/255, green: 190/255, blue: 255/255, alpha: 1)
-                cell.emergenciaButton.setTitle("Agregar", for: .normal)
-            }else{
+                
                 cell.emergenciaButton.backgroundColor = UIColor(red: 51/255, green: 190/255, blue: 119/255, alpha: 1)
                 cell.emergenciaButton.setTitle("Agregado", for: .normal)
+            }else{
+                
+                cell.emergenciaButton.backgroundColor = UIColor(red: 51/255, green: 190/255, blue: 255/255, alpha: 1)
+                cell.emergenciaButton.setTitle("Agregar", for: .normal)
             }
             
         }else{

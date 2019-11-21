@@ -151,12 +151,14 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func eliminarCategoria(cat: Categoria) {
+        obtenerContactos()
         var rem = -1
         var i = 0
         
         for cont in contacts{
             if(cont.categoria == cat.nombre){
                 cont.categoria = "Sin Categoria"
+                cont.icon = ""
             }
         }
         for categoria in categorias {
@@ -164,12 +166,6 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
                 rem = i
             }
             i += 1
-        }
-        
-        for cont in contactosEmergencia {
-            if(cont.categoria == cat.nombre){
-                cont.categoria = "Sin Categoria"
-            }
         }
         
         guardarContactos()

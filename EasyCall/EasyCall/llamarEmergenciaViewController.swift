@@ -67,6 +67,7 @@ class llamarEmergenciaViewController: UIViewController, UITableViewDataSource, U
     }
     
     func getContactoEmergencia(){
+        contactosEmergencia = [Contacto]()
         for cont in contacts{
             if (cont.emergencia){
                 contactosEmergencia.append(cont)

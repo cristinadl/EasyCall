@@ -9,10 +9,12 @@
 import UIKit
 
 class menuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var categorias = [Categoria]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        obtenerCategorias()
         
         title = "Menú"
         // Do any additional setup after loading the view.
@@ -75,60 +77,71 @@ class menuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        }
         
         
-         performSegue(withIdentifier: segueToGo, sender: nil)
+        if(segueToGo == "agregarSegue" && categorias.count == 0){
+            let dialogMessage = UIAlertController(title: "NO HAY CATEGORÍAS", message: "Agrega una Categoría e intenta nuevamente.", preferredStyle: .alert)
+            
+            // Create OK button with action handler
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                print("Ok button tapped")
+               
+            })
+            
+
+            
+            //Add OK and Cancel button to dialog message
+            dialogMessage.addAction(ok)
+            
+            // Present dialog message to user
+            self.present(dialogMessage, animated: true, completion: nil)
+        }else if(segueToGo == "meterContactoACatSegue" && categorias.count == 0){
+            let dialogMessage = UIAlertController(title: "NO HAY CATEGORÍAS", message: "Agrega una Categoría e intenta nuevamente.", preferredStyle: .alert)
+            
+            // Create OK button with action handler
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                print("Ok button tapped")
+               
+            })
+            
+
+            
+            //Add OK and Cancel button to dialog message
+            dialogMessage.addAction(ok)
+            
+            // Present dialog message to user
+            self.present(dialogMessage, animated: true, completion: nil)
+        }else{
+            performSegue(withIdentifier: segueToGo, sender: nil)
+        }
+        
+        
+        
+            
     }
     
-    // meterContactoACatSegue
-    // buscarSegue
-    // agregarSegue
     
+    func dataFileUrl(namePlist: String) -> URL {
+        let url = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+        let pathArchivo = url.appendingPathComponent(namePlist + ".plist")
+        return pathArchivo
+    }
     
+    @IBAction func obtenerCategorias() {
+        // borro la lista para verificar que sí se obtengan
+        categorias.removeAll()
+        
+        do {
+            let data = try Data.init(contentsOf: dataFileUrl(namePlist: "Categoria"))
+            categorias = try PropertyListDecoder().decode([Categoria].self, from: data)
+        }
+        catch {
+            print("Error reading or decoding file")
+        }
+        
+        for cat in categorias {
+            print (cat.nombre, cat.icon)
+        }
+    }
     
-    
-//    // MARK: - Navigation
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let viewAgregar = segue.destination as! agregarCategoriaViewController
-//        viewAgregar.delegado = self
-//    }
-//
-//
-//    //MARK: - Métodos del protocolo Agregar Jugador
-//    func agregaCategoria(cat: Categoria) {
-//        categorias.append(cat)
-//        guardarCategoria()
-//        tableView.reloadData()
-//
-//    }
-//
-//    @IBAction func guardarCategoria() {
-//
-//        print(categorias.count)
-//        do {
-//            let data = try PropertyListEncoder().encode(categorias)
-//            try data.write(to: dataFileUrl())
-//        }
-//        catch {
-//            print("Save Failed")
-//        }
-//    }
-//
-//    @IBAction func obtenerCategorias() {
-//        // borro la lista para verificar que sí se obtengan
-//        categorias.removeAll()
-//
-//        do {
-//            let data = try Data.init(contentsOf: dataFileUrl())
-//            categorias = try PropertyListDecoder().decode([Categoria].self, from: data)
-//        }
-//        catch {
-//            print("Error reading or decoding file")
-//        }
-//
-//        for cat in categorias {
-//            print (cat.nombre, cat.icon)
-//        }
-//    }
-
+ 
 
 }

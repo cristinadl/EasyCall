@@ -98,7 +98,7 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! meterContactoTableViewCell
         
         if(isSearching){
-            cell.contacto = contacts[indexPath.row]
+            cell.contacto = filteredData[indexPath.row]
             cell.name.text = filteredData[indexPath.row].getNombreCompleto()
             if(filteredData[indexPath.row].categoria == ""){
 
@@ -112,7 +112,7 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
                 cell.asignarCategoria.titleLabel?.text = "Modificar"
                 cell.categoria.text = filteredData[indexPath.row].categoria
                 cell.iconImage.backgroundColor = UIColor.white
-                cell.iconImage.image = UIImage(named: contacts[indexPath.row].icon)
+                cell.iconImage.image = UIImage(named: filteredData[indexPath.row].icon)
                 cell.iconImage.contentMode = .scaleAspectFit
             }
         }else{
