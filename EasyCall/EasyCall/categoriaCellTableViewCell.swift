@@ -20,7 +20,8 @@ class categoriaCellTableViewCell: UITableViewCell {
     @IBOutlet weak var llamarContacto: UIButton!
     @IBOutlet weak var editarContacto: UIButton!
     
-    var categoria: String!
+    var nombre: String!
+    var apellido: String!
     var delegado : pasarInformacion!
     
     override func awakeFromNib() {
