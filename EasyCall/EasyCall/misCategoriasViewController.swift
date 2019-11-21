@@ -39,7 +39,7 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = "Mis Categorias"
         obtenerContactos()
         obtenerCategorias()
         

@@ -20,7 +20,7 @@ class llamarEmergenciaViewController: UIViewController, UITableViewDataSource, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = "Contactos Emergencia"
         self.hideKeyboard()
     }
     

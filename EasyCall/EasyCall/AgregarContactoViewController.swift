@@ -64,6 +64,7 @@ class AgregarContactoViewController: UIViewController,UIPickerViewDelegate, UIPi
         self.picker.dataSource = self
        //pickerData = String[Categoria(nombre: "amigos", icon: "amigos")]
         self.hideKeyboard()
+        title = "Agregar Contacto"
         
         // Do any additional setup after loading the view.
     }
