@@ -141,8 +141,10 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
             cell.numeroLabel.text = contacts[indexPath.row].number
             
             if(contacts[indexPath.row].icon == ""){
-                cell.iconImage.backgroundColor = UIColor.init(red:0/255, green: 191/255, blue: 214/255, alpha: 1)
+                cell.iconImage.backgroundColor = UIColor.groupTableViewBackground
+                cell.iconImage.layer.cornerRadius = cell.iconImage.frame.height / 2
             }else{
+                cell.iconImage.backgroundColor = UIColor.white
                 cell.iconImage.image = UIImage(named: contacts[indexPath.row].icon)
             }
             

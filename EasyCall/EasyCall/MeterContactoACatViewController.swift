@@ -103,16 +103,14 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
             if(filteredData[indexPath.row].categoria == ""){
                 cell.asignarCategoria.titleLabel?.text = "Asignar"
                 cell.categoria.text = "Sin categoria"
+                cell.iconImage.backgroundColor = UIColor.groupTableViewBackground
+                cell.iconImage.layer.cornerRadius = cell.iconImage.frame.height / 2
+
             }else{
                 cell.asignarCategoria.titleLabel?.text = "Cambiar"
                 cell.categoria.text = filteredData[indexPath.row].categoria
-            }
-            
-            if(filteredData[indexPath.row].icon == ""){
-                cell.iconImage.backgroundColor = UIColor.init(red:0/255, green: 191/255, blue: 214/255, alpha: 1)
-            }else{
-                //                print(contacts[indexPath.section][indexPath.row])
-                cell.iconImage.image = UIImage(named: filteredData[indexPath.row].icon)
+                cell.iconImage.backgroundColor = UIColor.white
+                cell.iconImage.image = UIImage(named: contacts[indexPath.row].icon)
             }
         }else{
             
@@ -122,17 +120,15 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
             if(contacts[indexPath.row].categoria == ""){
                 cell.asignarCategoria.titleLabel?.text = "Asignar"
                 cell.categoria.text = "Sin categoria"
+                cell.iconImage.backgroundColor = UIColor.groupTableViewBackground
+                cell.iconImage.layer.cornerRadius = cell.iconImage.frame.height / 2
             }else{
                 cell.asignarCategoria.titleLabel?.text = "Cambiar"
                 cell.categoria.text = contacts[indexPath.row].categoria
-            }
-            
-            if(contacts[indexPath.row].icon == ""){
-                cell.iconImage.backgroundColor = UIColor.init(red:0/255, green: 191/255, blue: 214/255, alpha: 1)
-            }else{
-                //                print(contacts[indexPath.section][indexPath.row])
+                cell.iconImage.backgroundColor = UIColor.white
                 cell.iconImage.image = UIImage(named: contacts[indexPath.row].icon)
             }
+            
         }
         
         return cell
