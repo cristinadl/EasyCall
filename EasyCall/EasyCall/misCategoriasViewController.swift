@@ -234,7 +234,8 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
                 number = (contact.phoneNumbers.first?.value.stringValue)!
             }
             
-            let contactToAppend = Contacto(nombre: name + " " + familyName, number: number, icon: "", emergencia: false, categoria: "")
+            let contactToAppend = Contacto(nombre: name, apellido: familyName, number: number, icon: "", emergencia: false, categoria: "")
+            
             self.contacts.append(contactToAppend)
             let defaults = UserDefaults.standard
             

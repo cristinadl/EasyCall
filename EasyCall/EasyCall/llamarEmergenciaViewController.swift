@@ -54,7 +54,7 @@ class llamarEmergenciaViewController: UIViewController, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! contactTableViewCell
         
-        let name = contactosEmergencia[indexPath.row].nombre
+        let name = contactosEmergencia[indexPath.row].getNombreCompleto()
         
         cell.nombreLabel.text = name
         

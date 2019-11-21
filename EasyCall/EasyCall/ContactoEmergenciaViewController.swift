@@ -86,7 +86,7 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
             tableView.reloadData()
         }else{
             isSearching = true
-            filteredData = contacts.compactMap({ $0 }).filter{ $0.nombre.prefix(searchText.count) == searchText }
+            filteredData = contacts.compactMap({ $0 }).filter{ $0.getNombreCompleto().prefix(searchText.count) == searchText }
             tableView.reloadData()
         }
     }
@@ -108,10 +108,9 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! contactTableViewCell
         
         if(isSearching){
-            let name = filteredData[indexPath.row].nombre
             
             
-            cell.nombreLabel.text = filteredData[indexPath.row].nombre
+            cell.nombreLabel.text = filteredData[indexPath.row].getNombreCompleto()
             
             cell.numeroLabel.text = filteredData[indexPath.row].number
             
@@ -133,7 +132,7 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
             
         }else{
             
-            let name = contacts[indexPath.row].nombre
+            let name = contacts[indexPath.row].getNombreCompleto()
             
             cell.nombreLabel.text = name
             

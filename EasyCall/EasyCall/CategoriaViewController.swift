@@ -78,7 +78,7 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! categoriaCellTableViewCell
         
-        cell.name.text = filteredContacts[indexPath.row].nombre
+        cell.name.text = filteredContacts[indexPath.row].getNombreCompleto()
         cell.numeroCelular.text = filteredContacts[indexPath.row].number
         cell.iconImage.image = UIImage(named: filteredContacts[indexPath.row].icon)
         cell.delegado = self

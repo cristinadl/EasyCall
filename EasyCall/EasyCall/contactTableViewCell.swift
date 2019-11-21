@@ -56,7 +56,7 @@ class contactTableViewCell: UITableViewCell {
 
         
         for contact in contacts {
-            if(nombreLabel.text == contact.nombre){
+            if(nombreLabel.text == contact.getNombreCompleto()){
                 if(contact.emergencia){
                     contact.emergencia = false
                     print("\(nombreLabel.text) ya no es contacto de emergencia.")

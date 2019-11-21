@@ -86,11 +86,12 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
     
     
     @IBAction func guardarContactos() {
-        var contact = Contacto(nombre: "", number: "", icon: "", emergencia: false, categoria:"")
+        var contact = Contacto(nombre: "", apellido: "", number: "", icon: "", emergencia: false, categoria:"")
         var contactDet = ContactDetails(givenName: "")
         
         if let nombre = tfNombre.text , let apellido = tfApellido.text{
-            contact.nombre = nombre + " " + apellido
+            contact.nombre = nombre
+            contact.apellido = apellido
             contact.number = tfNumero.text!
         }
         

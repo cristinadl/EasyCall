@@ -63,7 +63,7 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
             print("Error reading or decoding file")
         }
         
-        //print(self.contacts[0].nombre + " " + self.contacts[0].categoria + " " + self.contacts[0].number)
+        //print(self.contacts[0].getNombreCompleto() + " " + self.contacts[0].categoria + " " + self.contacts[0].number)
         
     }
     
@@ -74,7 +74,7 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
             tableView.reloadData()
         }else{
             isSearching = true
-            filteredData = contacts.compactMap({ $0 }).filter{ $0.nombre.prefix(searchText.count) == searchText }
+            filteredData = contacts.compactMap({ $0 }).filter{ $0.getNombreCompleto().prefix(searchText.count) == searchText }
             tableView.reloadData()
         }
     }
@@ -97,7 +97,7 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
         
         if(isSearching){
             cell.contacto = contacts[indexPath.row]
-            cell.name.text = filteredData[indexPath.row].nombre
+            cell.name.text = filteredData[indexPath.row].getNombreCompleto()
             if(filteredData[indexPath.row].categoria == ""){
                 cell.asignarCategoria.titleLabel?.text = "Asignar"
                 cell.categoria.text = "Sin categoria"
@@ -116,7 +116,7 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
             
             cell.contacto = contacts[indexPath.row]
             
-            cell.name.text = contacts[indexPath.row].nombre
+            cell.name.text = contacts[indexPath.row].getNombreCompleto()
             if(contacts[indexPath.row].categoria == ""){
                 cell.asignarCategoria.titleLabel?.text = "Asignar"
                 cell.categoria.text = "Sin categoria"
@@ -148,7 +148,7 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
     
     func cambiarCategoria(cont: Contacto) {
         for contact in contacts{
-            if(contact.nombre == cont.nombre && contact.number == cont.number){
+            if(contact.getNombreCompleto() == cont.getNombreCompleto() && contact.number == cont.number){
                 contact.categoria = cont.categoria
                 contact.icon = cont.icon
             }
