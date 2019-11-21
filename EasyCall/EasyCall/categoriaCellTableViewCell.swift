@@ -14,6 +14,7 @@ class categoriaCellTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var numeroCelular: UILabel!
     @IBOutlet weak var llamarContacto: UIButton!
+    @IBOutlet weak var editarContacto: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,6 +36,11 @@ class categoriaCellTableViewCell: UITableViewCell {
     @IBAction func llamandoAContacto(_ sender: Any) {
          callContact(number: (numeroCelular.text?.digits)!)
 //        print("llamando a \(name.text) con numero: \(numeroCelular.text)")
+    }
+    
+    @IBAction func editandoAContacto(_ sender: Any) {
+            print("editando a \(name.text)")
+        //        print("llamando a \(name.text) con numero: \(numeroCelular.text)")
     }
     
 

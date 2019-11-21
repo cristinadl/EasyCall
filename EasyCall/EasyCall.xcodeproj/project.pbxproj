@@ -12,6 +12,7 @@
 		8D2CE95823762C4B006489CC /* AgregarContactoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2CE95723762C4B006489CC /* AgregarContactoViewController.swift */; };
 		8D2CE95A23762C60006489CC /* BuscarContactoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2CE95923762C60006489CC /* BuscarContactoViewController.swift */; };
 		8D6EE48F23861EDB0051E65D /* llamarEmergenciaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6EE48E23861EDB0051E65D /* llamarEmergenciaViewController.swift */; };
+		8D6EE491238640F00051E65D /* editarContactoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6EE490238640F00051E65D /* editarContactoViewController.swift */; };
 		8D976B27237A39B7002EA55B /* meterContactoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D976B26237A39B7002EA55B /* meterContactoTableViewCell.swift */; };
 		8D976B29237A4622002EA55B /* escogerCategoriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D976B28237A4622002EA55B /* escogerCategoriaViewController.swift */; };
 		8DDC82C823539DB4000E7BFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC82C723539DB4000E7BFB /* AppDelegate.swift */; };
@@ -57,6 +58,7 @@
 		8D2CE95723762C4B006489CC /* AgregarContactoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarContactoViewController.swift; sourceTree = "<group>"; };
 		8D2CE95923762C60006489CC /* BuscarContactoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscarContactoViewController.swift; sourceTree = "<group>"; };
 		8D6EE48E23861EDB0051E65D /* llamarEmergenciaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = llamarEmergenciaViewController.swift; sourceTree = "<group>"; };
+		8D6EE490238640F00051E65D /* editarContactoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editarContactoViewController.swift; sourceTree = "<group>"; };
 		8D976B26237A39B7002EA55B /* meterContactoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meterContactoTableViewCell.swift; sourceTree = "<group>"; };
 		8D976B28237A4622002EA55B /* escogerCategoriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = escogerCategoriaViewController.swift; sourceTree = "<group>"; };
 		8DDC82C423539DB4000E7BFB /* EasyCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +156,7 @@
 				8DDC82FE2353ABEB000E7BFB /* menuViewController.swift */,
 				8D2CE95523762C39006489CC /* MeterContactoACatViewController.swift */,
 				8D2CE95723762C4B006489CC /* AgregarContactoViewController.swift */,
+				8D6EE490238640F00051E65D /* editarContactoViewController.swift */,
 				8D2CE95923762C60006489CC /* BuscarContactoViewController.swift */,
 				8D976B26237A39B7002EA55B /* meterContactoTableViewCell.swift */,
 				8D976B28237A4622002EA55B /* escogerCategoriaViewController.swift */,
@@ -323,6 +326,7 @@
 				E5E14FAE237A81660034C498 /* RZNContacts.swift in Sources */,
 				8D6EE48F23861EDB0051E65D /* llamarEmergenciaViewController.swift in Sources */,
 				8DDC82FD2353A5F0000E7BFB /* agregarCategoriaViewController.swift in Sources */,
+				8D6EE491238640F00051E65D /* editarContactoViewController.swift in Sources */,
 				8DDC82FF2353ABEB000E7BFB /* menuViewController.swift in Sources */,
 				E5157B3D236FB714001EFBA9 /* PopOverViewController.swift in Sources */,
 				8DDC83032353AE1B000E7BFB /* menuItem.swift in Sources */,

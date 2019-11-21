@@ -83,6 +83,13 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
         return cell
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "editarContactoSegue"){
+            
+        }
+    }
+    
     @IBAction func eliminarCategoria(_ sender: UIButton) {
         
         // Declare Alert message
