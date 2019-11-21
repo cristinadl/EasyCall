@@ -64,31 +64,31 @@ class agregarCategoriaViewController: UIViewController, UIPopoverPresentationCon
     }
     
     @IBAction func selectedIconAmigos(_ sender: UIButton) {
-        imagen = "amigosMuchos"
+        imagen = "amigos"
         imagesView.isHidden = true
         actualizarDato(img: (sender.imageView?.image)!)
     }
     
     @IBAction func selectedIconHospital(_ sender: UIButton) {
-        imagen = "hospitalGrande"
+        imagen = "hospital"
         imagesView.isHidden = true
         actualizarDato(img: (sender.imageView?.image)!)
     }
     
     @IBAction func selectedIconEmergencia(_ sender: UIButton) {
-        imagen = "contactos"
+        imagen = "banco"
         imagesView.isHidden = true
         actualizarDato(img: (sender.imageView?.image)!)
     }
     
     @IBAction func selectedIconCafe(_ sender: UIButton) {
-        imagen = "serviciosVarios"
+        imagen = "servicios"
         imagesView.isHidden = true
         actualizarDato(img: (sender.imageView?.image)!)
     }
     
     @IBAction func selectedIconServicios(_ sender: UIButton) {
-        imagen = "amigosDelCafe"
+        imagen = "cafe"
         imagesView.isHidden = true
         
         actualizarDato(img: (sender.imageView?.image)!)
@@ -107,13 +107,13 @@ class agregarCategoriaViewController: UIViewController, UIPopoverPresentationCon
     }
     
     @IBAction func selectedIconCorazonMedico(_ sender: UIButton) {
-        imagen = "family"
+        imagen = "contactos"
         imagesView.isHidden = true
         actualizarDato(img: (sender.imageView?.image)!)
     }
     
     @IBAction func selectedIconServiciosSalud(_ sender: UIButton) {
-        imagen = "mandados"
+        imagen = "mercado"
         imagesView.isHidden = true
         actualizarDato(img: (sender.imageView?.image)!)
     }
