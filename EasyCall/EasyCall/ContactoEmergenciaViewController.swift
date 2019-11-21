@@ -43,7 +43,7 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
         
         searchBar.delegate = self
         title = "Asignar Contactos de Emergencia"
-        searchBar.placeholder = "Escribe aqui al Contacto que buscas"
+        searchBar.placeholder = "Escribe aquí al contacto que buscas"
         searchBar.returnKeyType = UIReturnKeyType.done
     }
     
