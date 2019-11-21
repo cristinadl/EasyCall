@@ -62,6 +62,13 @@ class contactTableViewCell: UITableViewCell {
                     print("\(nombreLabel.text) ya no es contacto de emergencia.")
                     emergenciaButton.backgroundColor = UIColor(red: 51/255, green: 190/255, blue: 255/255, alpha: 1)
                     emergenciaButton.setTitle("Agregar", for: .normal)
+                    var i = 0
+                    for cont in contactosEmergencia{
+                        if(cont.number == contact.number){
+                            contactosEmergencia.remove(at: i)
+                        }
+                        i = i + 1
+                    }
                     
 //                    51 190 255
                 }else{
@@ -69,9 +76,11 @@ class contactTableViewCell: UITableViewCell {
                     print("\(nombreLabel.text) ahora es contacto de emergencia.")
                     emergenciaButton.backgroundColor = UIColor(red: 51/255, green: 190/255, blue: 119/255, alpha: 1)
                     emergenciaButton.setTitle("Agregado", for: .normal)
+                    contactosEmergencia.append(contact)
                 }
             }
         }
+        print(contactosEmergencia.count)
         guardarContactos()
     }
     

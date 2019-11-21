@@ -14,6 +14,8 @@ protocol protocoloContactoEmergencia {
     func contactoEmergencia(cat : Categoria) -> Void
 }
 
+var contactosEmergencia = [Contacto]()
+
 class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
     
     var contacts = [Contacto]()
