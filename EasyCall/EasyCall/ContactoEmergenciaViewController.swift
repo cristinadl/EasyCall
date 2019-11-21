@@ -25,17 +25,17 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func btLlamar(_ sender: UIButton) {
-       
+        
         
         
         
     }
     
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.hideKeyboard()
         obtenerContactos()
         
@@ -64,7 +64,7 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
     @IBAction func obtenerContactos() {
         // borro la lista para verificar que sí se obtengan
         contacts.removeAll()
-
+        
         do {
             let data = try Data.init(contentsOf: dataFileUrl(namePlist: "Contactos"))
             contacts = try PropertyListDecoder().decode([Contacto].self, from: data)
@@ -72,7 +72,7 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
         catch {
             print("Error reading or decoding file")
         }
-
+        
         guardarContactos()
         
     }
@@ -94,7 +94,7 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
             return filteredData.count
         }
         
-//        print("number of sections \(contacts.count)")
+        //        print("number of sections \(contacts.count)")
         return contacts.count
     }
     

@@ -11,7 +11,7 @@ import CoreData
 import Contacts
 
 class llamarEmergenciaViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     var contacts = [Contacto]()
     var contactsEmergencia = [Contacto]()
     var contactStore = CNContactStore()
@@ -28,7 +28,17 @@ class llamarEmergenciaViewController: UIViewController, UITableViewDataSource, U
         self.hideKeyboard()
         obtenerContactos()
         
+        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("regresando a la pantalla")
+        //        print("no. emergencia = \(contactsEmergencia.count)")
+        //        tableView.reloadData()
+        //        obtenerContactos()
+    }
+    
+    
     
     func dataFileUrl(namePlist: String) -> URL {
         let url = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -36,9 +46,12 @@ class llamarEmergenciaViewController: UIViewController, UITableViewDataSource, U
         return pathArchivo
     }
     
+    @IBAction func editarPressed(_ sender: Any) {
+        performSegue(withIdentifier: "ContactoEmergencia", sender: nil)
+    }
+    
     @IBAction func guardarContactos() {
         
-        print(contacts.count)
         do {
             let data = try PropertyListEncoder().encode(contacts)
             try data.write(to: dataFileUrl(namePlist: "Contactos"))
@@ -51,6 +64,7 @@ class llamarEmergenciaViewController: UIViewController, UITableViewDataSource, U
     @IBAction func obtenerContactos() {
         // borro la lista para verificar que sí se obtengan
         contacts.removeAll()
+        contactsEmergencia.removeAll()
         
         do {
             let data = try Data.init(contentsOf: dataFileUrl(namePlist: "Contactos"))
@@ -66,7 +80,7 @@ class llamarEmergenciaViewController: UIViewController, UITableViewDataSource, U
                 contactsEmergencia.append(cont)
             }
         }
-        
+        tableView.reloadData()
         guardarContactos()
         
     }
@@ -83,20 +97,19 @@ class llamarEmergenciaViewController: UIViewController, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! contactTableViewCell
         
-            let name = contactsEmergencia[indexPath.row].nombre
+        let name = contactsEmergencia[indexPath.row].nombre
+        
+        cell.nombreLabel.text = name
+        
+        cell.numeroLabel.text = contactsEmergencia[indexPath.row].number
+        
+        
+        if(contactsEmergencia[indexPath.row].icon == ""){
+            cell.iconImage.backgroundColor = UIColor.init(red:0/255, green: 191/255, blue: 214/255, alpha: 1)
             
-            cell.nombreLabel.text = name
-            
-            cell.numeroLabel.text = contactsEmergencia[indexPath.row].number
-            
-            print("holaholaholahola")
-            
-            if(contactsEmergencia[indexPath.row].icon == ""){
-                cell.iconImage.backgroundColor = UIColor.init(red:0/255, green: 191/255, blue: 214/255, alpha: 1)
-                
-            }else{
-                cell.iconImage.image = UIImage(named: contactsEmergencia[indexPath.row].icon)
-            }
+        }else{
+            cell.iconImage.image = UIImage(named: contactsEmergencia[indexPath.row].icon)
+        }
         
         cell.iconImage.layer.cornerRadius = cell.iconImage.frame.width / 2
         
