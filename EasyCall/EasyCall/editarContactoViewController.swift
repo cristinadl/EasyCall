@@ -73,7 +73,19 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
         
         self.picker.delegate = self
         self.picker.dataSource = self
-        //pickerData = String[Categoria(nombre: "amigos", icon: "amigos")]
+        print(numCategory)
+        var row = 0
+        var count = 0
+        
+        for cat in categorias {
+            if(cat.nombre == categoria){
+                row = count
+                print("row = \(row)")
+            }else{
+                count = count + 1
+            }
+        }
+        self.picker.selectRow(row, inComponent: 0, animated: true)
         self.hideKeyboard()
         
         tfNombre.text = nombre
@@ -88,6 +100,7 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
     var apellido = ""
     var numero = ""
     var categoria = ""
+    var numCategory = 0
     
     @IBOutlet weak var tfNombre: UITextField!
     @IBOutlet weak var tfApellido: UITextField!
@@ -171,20 +184,8 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
 //            print (cat.nombre, cat.icon)
 //        }
         
-        var row = 0
-        var count = 0
-        
-        for cat in categorias {
-            if(cat.nombre == categoria){
-                row = count
-                print("row = \(row)")
-            }else{
-                count = count + 1
-            }
-        }
         
         
-        picker.selectRow(row, inComponent: 0, animated: true)
     }
     
     @IBAction func obtenerContactos() {

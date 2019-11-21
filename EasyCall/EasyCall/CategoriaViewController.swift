@@ -93,6 +93,8 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
         return filteredContacts.count
     }
     
+    var numCat = 0
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! categoriaCellTableViewCell
         
@@ -103,6 +105,7 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
         cell.apellido = filteredContacts[indexPath.row].apellido
         cell.nombre = filteredContacts[indexPath.row].nombre
         cell.delegado = self
+        numCat = indexPath.row
         
         return cell
     }
@@ -153,6 +156,7 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
             vc.numero = numero!
             vc.delegado = self
             vc.categoria = nombreCat
+            vc.numCategory = numCat
         }
         
     }
