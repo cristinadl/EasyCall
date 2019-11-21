@@ -32,7 +32,7 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
         
         
     }
-    //// comentario de belinda
+
     
     
     override func viewDidLoad() {
