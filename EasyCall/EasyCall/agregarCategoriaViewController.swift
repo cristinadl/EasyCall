@@ -64,74 +64,77 @@ class agregarCategoriaViewController: UIViewController, UIPopoverPresentationCon
     }
     
     @IBAction func selectedIconAmigos(_ sender: UIButton) {
-        imagen = "amigos"
+        imagen = "1"
         imagesView.isHidden = true
         actualizarDato(img: (sender.imageView?.image)!)
     }
     
     @IBAction func selectedIconHospital(_ sender: UIButton) {
-        imagen = "hospital"
+        imagen = "2"
         imagesView.isHidden = true
         actualizarDato(img: (sender.imageView?.image)!)
     }
     
     @IBAction func selectedIconEmergencia(_ sender: UIButton) {
-        imagen = "banco"
+        imagen = "3"
         imagesView.isHidden = true
         actualizarDato(img: (sender.imageView?.image)!)
     }
     
+    
+    @IBAction func selectedIconServiciosDelHogar(_ sender: UIButton) {
+        imagen = "4"
+        imagesView.isHidden = true
+        actualizarDato(img: (sender.imageView?.image)!)
+    }
+    
+    
     @IBAction func selectedIconCafe(_ sender: UIButton) {
-        imagen = "servicios"
+        imagen = "5"
         imagesView.isHidden = true
         actualizarDato(img: (sender.imageView?.image)!)
     }
     
     @IBAction func selectedIconServicios(_ sender: UIButton) {
-        imagen = "cafe"
+        imagen = "6"
         imagesView.isHidden = true
         
         actualizarDato(img: (sender.imageView?.image)!)
     }
-    
-    @IBAction func selectedIconTrabajo(_ sender: UIButton) {
-        imagen = "casa"
-        imagesView.isHidden = true
-        actualizarDato(img: (sender.imageView?.image)!)
-    }
+
     
     @IBAction func selectedIconAmigos2(_ sender: UIButton) {
-        imagen = "people"
+        imagen = "7"
         imagesView.isHidden = true
         actualizarDato(img: (sender.imageView?.image)!)
     }
     
     @IBAction func selectedIconCorazonMedico(_ sender: UIButton) {
-        imagen = "contactos"
+        imagen = "8"
         imagesView.isHidden = true
         actualizarDato(img: (sender.imageView?.image)!)
     }
     
     @IBAction func selectedIconServiciosSalud(_ sender: UIButton) {
-        imagen = "mercado"
+        imagen = "9"
         imagesView.isHidden = true
         actualizarDato(img: (sender.imageView?.image)!)
     }
     
     @IBAction func selectedIconServiciosHogar(_ sender: UIButton) {
-        imagen = "comida"
+        imagen = "10"
         imagesView.isHidden = true
         actualizarDato(img: (sender.imageView?.image)!)
     }
     
     @IBAction func selectedIconHogar(_ sender: UIButton) {
-        imagen = "doctor"
+        imagen = "11"
         imagesView.isHidden = true
         actualizarDato(img: (sender.imageView?.image)!)
     }
     
     @IBAction func selectedIconAlerta(_ sender: UIButton) {
-        imagen = "emergencias"
+        imagen = "12"
         imagesView.isHidden = true
         actualizarDato(img: (sender.imageView?.image)!)
     }
