@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol protocoloEditarContacto {
+    func eliminarContacto(contOriginal : Contacto) -> Void
+    func actualizarDato(contOriginal : Contacto, cont: Contacto) -> Void
+}
+
 class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
+    
+     var delegado : protocoloEditarContacto!
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -111,41 +119,31 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
     }
     
     func eliminar(){
-        var count = 0;
+        var contacto = Contacto(nombre: "", apellido: "", number: "", icon: "", emergencia: false, categoria: "")
         for cont in contacts {
             if(nombre == cont.nombre && apellido == cont.apellido && numero == cont.number){
-                contacts.remove(at: count)
+                contacto = cont
             }
-            count = count + 1
         }
-        do {
-            let data = try PropertyListEncoder().encode(contacts)
-            try data.write(to: dataFileUrl(namePlist: "Contactos"))
-        }
-        catch {
-            print("Save Failed")
-        }
+        delegado.eliminarContacto(contOriginal: contacto)
+//        navigationController?.popViewController(animated: true)
         navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func guardarContactos() {
+        var contacto = Contacto(nombre: "", apellido: "", number: "", icon: "", emergencia: false, categoria: "")
         for cont in contacts {
             if(nombre == cont.nombre && apellido == cont.apellido && numero == cont.number){
-                cont.nombre = tfNombre.text!
-                cont.apellido = tfApellido.text!
-                cont.number = tfNumero.text!
+                contacto = cont
+                contacto.nombre = tfNombre.text!
+                contacto.apellido = tfApellido.text!
+                contacto.number = tfNumero.text!
+                delegado.actualizarDato(contOriginal: cont, cont: contacto)
             }
         }
         
-        do {
-            let data = try PropertyListEncoder().encode(contacts)
-            try data.write(to: dataFileUrl(namePlist: "Contactos"))
-        }
-        catch {
-            print("Save Failed")
-        }
-//       navigationController?.popViewController(animated: true)
-    navigationController?.popToRootViewController(animated: true)
+       navigationController?.popViewController(animated: true)
+//    navigationController?.popToRootViewController(animated: true)
 
     }
     

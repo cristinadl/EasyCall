@@ -14,7 +14,8 @@ protocol protocoloEliminarCategoria {
 
 var contacts2 = [Contacto]()
 
-class CategoriaViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+class CategoriaViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, protocoloEditarContacto {
+    
     
     var delegado : protocoloEliminarCategoria!
     
@@ -34,9 +35,8 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
         return pathArchivo
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        print("entro")
-        obtenerContactos()
+    func reloadData(){
+        guardarContactos()
         tableView.reloadData()
     }
     
@@ -55,6 +55,18 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
             }
         }
     }
+    
+    @IBAction func guardarContactos() {
+           
+           print(contacts.count)
+           do {
+               let data = try PropertyListEncoder().encode(contacts)
+               try data.write(to: dataFileUrl(namePlist: "Contactos"))
+           }
+           catch {
+               print("Save Failed")
+           }
+       }
     
     @IBAction func obtenerContactos() {
         
@@ -132,29 +144,46 @@ class CategoriaViewController: UIViewController,UITableViewDelegate, UITableView
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        //        print("nombre prepare = \(nombre!)")
-        
-        if let vc = segue.destination as? editarContactoViewController {
+        if(segue.identifier == "editarContactoSegue"){
+            let vc = segue.destination as! editarContactoViewController
             print("prepare segue entrado")
             vc.nombre = nombre!
             vc.apellido = apellido!
             vc.numero = numero!
+            vc.delegado = self
             vc.categoria = nombreCat
-            
         }
+        
     }
     
 
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func eliminarContacto(contOriginal: Contacto) {
+        var count = 0
+        var deleteAt = 0
+        for cont in contacts {
+            if(cont.number == contOriginal.number){
+                deleteAt = count
+            }
+            count = count + 1
+        }
+        contacts.remove(at: deleteAt)
+        reloadData()
+        
+    }
+    
+    func actualizarDato(contOriginal: Contacto, cont: Contacto) {
+        for contact in contacts {
+            if(contOriginal.number == contact.number){
+                print("lo encontro")
+                contact.nombre = cont.nombre
+                contact.apellido = cont.apellido
+                contact.categoria = cont.categoria
+                contact.number = cont.number
+            }
+        }
+        reloadData()
+    }
     
 }
 extension CategoriaViewController: pasarInformacion {
