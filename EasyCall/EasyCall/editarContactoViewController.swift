@@ -71,6 +71,7 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
         tfNombre.text = nombre
         tfApellido.text = apellido
         tfNumero.text = numero
+        title = "Editar Contacto"
         
         // Do any additional setup after loading the view.
     }
@@ -84,6 +85,39 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
     @IBOutlet weak var tfApellido: UITextField!
     @IBOutlet weak var tfNumero: UITextField!
     
+    @IBAction func eliminarContactoPressed(_ sender: Any) {
+        
+        // Declare Alert message
+        let dialogMessage = UIAlertController(title: "¿QUIERES ELIMINAR A ESTE CONTACTO?", message: "¿Estas seguro que quieres eliminar este contacto? Una vez eliminado, no se podra recuperar a este contacto.", preferredStyle: .alert)
+        
+        // Create OK button with action handler
+        let ok = UIAlertAction(title: "SI", style: .default, handler: { (action) -> Void in
+            print("Ok button tapped")
+            self.eliminar()
+        })
+        
+        // Create Cancel button with action handlder
+        let cancel = UIAlertAction(title: "NO", style: .cancel) { (action) -> Void in
+            print("Cancel button tapped")
+        }
+        
+        //Add OK and Cancel button to dialog message
+        dialogMessage.addAction(ok)
+        dialogMessage.addAction(cancel)
+        
+        // Present dialog message to user
+        self.present(dialogMessage, animated: true, completion: nil)
+    
+    }
+    
+    func eliminar(){
+//        let cat = Categoria(nombre: contacts, icon: "hospital")
+//        let contacto = Contacto(nombre: nombre, apellido: apellido, number: numero, icon: <#T##String#>, emergencia: <#T##Bool#>, categoria: categorias)
+//        delegado.eliminarCategoria(cat: cat)
+//        navigationController?.popViewController(animated: true)
+//        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func guardarContactos() {
 //        var contact = Contacto(nombre: "", apellido: "", number: "", icon: "", emergencia: false, categoria:"")
@@ -119,7 +153,8 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
         catch {
             print("Save Failed")
         }
-        
+        navigationController?.popViewController(animated: true)
+
     }
     
     @IBAction func obtenerCategorias() {
