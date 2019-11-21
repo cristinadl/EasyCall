@@ -105,12 +105,23 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func contactoEmergenciaClick(_ sender: UIButton) {
-        for cont in contacts{
+        obtenerContactos()
+        var count = 0
+        for cont in contacts {
             if(cont.emergencia){
-                performSegue(withIdentifier: "llamarEmergencia", sender: nil)
+                count = count + 1
+             
+                print(cont.nombre)
             }
         }
-        performSegue(withIdentifier: "ContactoEmergencia", sender: nil)
+        
+        if(count > 0){
+            print("hay \(count) contactos de emergencia")
+          performSegue(withIdentifier: "llamarEmergencia", sender: nil)
+        }else{
+            print("no hay contactos de emergencia")
+            performSegue(withIdentifier: "ContactoEmergencia", sender: nil)
+        }
     }
     
     //MARK: - Métodos del protocolo Agregar Jugador
