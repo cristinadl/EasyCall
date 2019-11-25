@@ -43,6 +43,10 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         title = "Mis Categorias"
         obtenerContactos()
+        print(usuarioNuevo)
+        if(usuarioNuevo){
+            crearCategoriasDefault()
+        }
         obtenerCategorias()
         
     }
@@ -52,9 +56,8 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
         if let new = defaults.value(forKey: "nuevo") as? Bool {
             usuarioNuevo = new
         }
-        print(usuarioNuevo)
+        
         if(usuarioNuevo){
-            crearCategoriasDefault()
             contactStore.requestAccess(for: .contacts, completionHandler: { (success,error) in
                 if success {
                     print("Contact Authorization Succesfully")
