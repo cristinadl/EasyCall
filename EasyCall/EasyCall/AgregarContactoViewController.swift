@@ -90,6 +90,7 @@ class AgregarContactoViewController: UIViewController,UIPickerViewDelegate, UIPi
                     contact.icon = cat.icon
                 }
             }
+        navigationController?.popToRootViewController(animated: true)
         }
         
         

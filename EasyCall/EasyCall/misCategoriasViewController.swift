@@ -54,6 +54,7 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
         }
         print(usuarioNuevo)
         if(usuarioNuevo){
+            crearCategoriasDefault()
             contactStore.requestAccess(for: .contacts, completionHandler: { (success,error) in
                 if success {
                     print("Contact Authorization Succesfully")
@@ -73,6 +74,12 @@ class misCategoriasViewController: UIViewController, UITableViewDelegate, UITabl
             }
             guardarContactos()
         }
+    }
+    
+    func crearCategoriasDefault(){
+        categorias += [Categoria(nombre: "Familia", icon: "6"), Categoria(nombre: "Amigos", icon: "1"), Categoria(nombre: "Amigos del café", icon: "5"),Categoria(nombre: "Servicios de emergencia", icon: "2"), Categoria(nombre: "Servicios generales", icon: "4"), Categoria(nombre: "Servicios varios", icon: "9")]
+        guardarCategoria()
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
