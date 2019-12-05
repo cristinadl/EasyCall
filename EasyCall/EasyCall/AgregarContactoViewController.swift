@@ -156,6 +156,12 @@ class AgregarContactoViewController: UIViewController,UIPickerViewDelegate, UIPi
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return UIInterfaceOrientationMask.portrait
+    }
+    override var shouldAutorotate: Bool {
+        return false
+    }
 
 }
 

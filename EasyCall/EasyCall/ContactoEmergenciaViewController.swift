@@ -174,4 +174,10 @@ class ContactoEmergenciaViewController: UIViewController, UISearchBarDelegate, U
         return 150
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return UIInterfaceOrientationMask.portrait
+    }
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
 }

@@ -139,6 +139,12 @@ class agregarCategoriaViewController: UIViewController, UIPopoverPresentationCon
         actualizarDato(img: (sender.imageView?.image)!)
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return UIInterfaceOrientationMask.portrait
+    }
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
 }
 
 

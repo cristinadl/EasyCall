@@ -156,5 +156,11 @@ class BuscarContactoViewController: UIViewController, UISearchBarDelegate, UITab
         return 150
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return UIInterfaceOrientationMask.portrait
+    }
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
 }
 

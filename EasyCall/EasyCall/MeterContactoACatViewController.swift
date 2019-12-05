@@ -161,6 +161,10 @@ class MeterContactoACatViewController: UIViewController, UITableViewDelegate, UI
     }
     
     
-    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return UIInterfaceOrientationMask.portrait
+    }
+    override var shouldAutorotate: Bool {
+        return false
+    }
     
 }

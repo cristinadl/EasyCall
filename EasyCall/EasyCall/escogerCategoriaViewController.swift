@@ -81,9 +81,12 @@ class escogerCategoriaViewController: UIViewController, UITableViewDelegate, UIT
             print("Error reading or decoding file")
         }
         
-        for cat in categorias {
-            print (cat.nombre, cat.icon)
-        }
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return UIInterfaceOrientationMask.portrait
+    }
+    override var shouldAutorotate: Bool {
+        return false
     }
     
 }

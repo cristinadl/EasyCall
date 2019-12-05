@@ -34,5 +34,11 @@ preferredContentSize = CGSize(width: 350, height: 350)
         dismiss(animated: true, completion: nil)
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return UIInterfaceOrientationMask.portrait
+    }
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
 
 }
