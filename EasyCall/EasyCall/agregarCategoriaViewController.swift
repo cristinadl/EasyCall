@@ -139,22 +139,6 @@ class agregarCategoriaViewController: UIViewController, UIPopoverPresentationCon
         actualizarDato(img: (sender.imageView?.image)!)
     }
     
-    
-    
-    
-    
-    
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-               let vistaPopOver = segue.destination as! PopOverViewController
-           vistaPopOver.popoverPresentationController!.delegate = self
-        vistaPopOver.imagen = iconImageView.image
-        
-        if let imagen = iconImageView.image {
-            vistaPopOver.imagen = imagen
-        }
-           
-       }
 }
 
 

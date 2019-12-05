@@ -38,12 +38,7 @@ struct ContactDetails {
     var urlAddresses: [String:String]?                   //[CNLabeledValue<NSString>]
     
     var profileImage: Data?
-    
-    //var postalAddresses: [String:String]                //[CNLabeledValue<CNPostalAddress>]
-    //var contactRelations: [String:String]               //[CNLabeledValue<CNContactRelation>]
-    //var socialProfiles: [String:String]                 //[CNLabeledValue<CNSocialProfile>]
-    //var instantMessageAddresses: [String:String]        //[CNLabeledValue<CNInstantMessageAddress>]
-    
+
     init(givenName: String) {
         self.givenName = givenName
     }

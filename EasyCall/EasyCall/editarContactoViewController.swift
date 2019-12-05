@@ -180,11 +180,6 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
             print("Error reading or decoding file")
         }
         
-//        for cat in categorias {
-//            print (cat.nombre, cat.icon)
-//        }
-        
-        
         
     }
     
@@ -200,7 +195,6 @@ class editarContactoViewController: UIViewController,UIPickerViewDelegate, UIPic
             print("Error reading or decoding file")
         }
         
-        //print(self.contacts[0].nombre + " " + self.contacts[0].categoria + " " + self.contacts[0].number)
         
     }
     

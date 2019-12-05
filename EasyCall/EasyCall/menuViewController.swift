@@ -30,11 +30,6 @@ class menuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     ]
     @IBOutlet weak var tableView: UITableView!
     
-//    func dataFileUrl() -> URL {
-//        let url = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-//        let pathArchivo = url.appendingPathComponent("Categoria.plist")
-//        return pathArchivo
-//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuItems.count

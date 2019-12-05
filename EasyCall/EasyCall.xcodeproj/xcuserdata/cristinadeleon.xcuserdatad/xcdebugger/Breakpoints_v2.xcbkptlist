@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C75FDBB7-6723-41B2-9D42-35B011BF00BE"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EasyCall/PopOverViewController.swift"
@@ -21,7 +21,7 @@
             <Locations>
                <Location
                   uuid = "C75FDBB7-6723-41B2-9D42-35B011BF00BE - 91a52942df763322"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "EasyCall.PopOverViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; EasyCall.PopOverViewController"
@@ -36,7 +36,7 @@
                </Location>
                <Location
                   uuid = "C75FDBB7-6723-41B2-9D42-35B011BF00BE - 2b8371fd459a5df3"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "EasyCall.PopOverViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; EasyCall.PopOverViewController"
@@ -51,7 +51,7 @@
                </Location>
                <Location
                   uuid = "C75FDBB7-6723-41B2-9D42-35B011BF00BE - 1e07883ca87f3ffb"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "EasyCall.PopOverViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;EasyCall.PopOverViewController&gt;"
@@ -66,7 +66,7 @@
                </Location>
                <Location
                   uuid = "C75FDBB7-6723-41B2-9D42-35B011BF00BE - 6870ed1e0ee2e0f8"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "EasyCall.PopOverViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;EasyCall.PopOverViewController&gt;"
@@ -81,7 +81,7 @@
                </Location>
                <Location
                   uuid = "C75FDBB7-6723-41B2-9D42-35B011BF00BE - e34002f9061b703d"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "EasyCall.PopOverViewController.__deallocating_deinit"

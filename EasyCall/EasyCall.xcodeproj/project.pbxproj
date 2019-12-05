@@ -30,7 +30,6 @@
 		8DDC83012353AC8C000E7BFB /* Contacto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC83002353AC8C000E7BFB /* Contacto.swift */; };
 		8DDC83032353AE1B000E7BFB /* menuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC83022353AE1B000E7BFB /* menuItem.swift */; };
 		8DDC830523544102000E7BFB /* contactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC830423544102000E7BFB /* contactTableViewCell.swift */; };
-		E5157B3D236FB714001EFBA9 /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5157B3C236FB714001EFBA9 /* PopOverViewController.swift */; };
 		E55B82B1238699BB006FB0E8 /* PopOverCreditosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55B82B0238699BB006FB0E8 /* PopOverCreditosViewController.swift */; };
 		E5BD95E2235434A40047A1A8 /* ContactoEmergenciaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BD95E1235434A40047A1A8 /* ContactoEmergenciaViewController.swift */; };
 		E5E14FAE237A81660034C498 /* RZNContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E14FAD237A81660034C498 /* RZNContacts.swift */; };
@@ -83,7 +82,6 @@
 		8DDC83002353AC8C000E7BFB /* Contacto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacto.swift; sourceTree = "<group>"; };
 		8DDC83022353AE1B000E7BFB /* menuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuItem.swift; sourceTree = "<group>"; };
 		8DDC830423544102000E7BFB /* contactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactTableViewCell.swift; sourceTree = "<group>"; };
-		E5157B3C236FB714001EFBA9 /* PopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
 		E55B82B0238699BB006FB0E8 /* PopOverCreditosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverCreditosViewController.swift; sourceTree = "<group>"; };
 		E5BD95E1235434A40047A1A8 /* ContactoEmergenciaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactoEmergenciaViewController.swift; sourceTree = "<group>"; };
 		E5E14FAD237A81660034C498 /* RZNContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RZNContacts.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 				E5E14FAD237A81660034C498 /* RZNContacts.swift */,
 				8DDC82CB23539DB4000E7BFB /* Main.storyboard */,
 				E55B82B0238699BB006FB0E8 /* PopOverCreditosViewController.swift */,
-				E5157B3C236FB714001EFBA9 /* PopOverViewController.swift */,
 				8DDC82D123539DB4000E7BFB /* Assets.xcassets */,
 				8DDC82D323539DB4000E7BFB /* LaunchScreen.storyboard */,
 				8DDC82D623539DB4000E7BFB /* Info.plist */,
@@ -332,7 +329,6 @@
 				E55B82B1238699BB006FB0E8 /* PopOverCreditosViewController.swift in Sources */,
 				8D6EE491238640F00051E65D /* editarContactoViewController.swift in Sources */,
 				8DDC82FF2353ABEB000E7BFB /* menuViewController.swift in Sources */,
-				E5157B3D236FB714001EFBA9 /* PopOverViewController.swift in Sources */,
 				8DDC83032353AE1B000E7BFB /* menuItem.swift in Sources */,
 				8D976B27237A39B7002EA55B /* meterContactoTableViewCell.swift in Sources */,
 				3C4F7DC3236FBCD700B55507 /* CategoriaViewController.swift in Sources */,
